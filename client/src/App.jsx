@@ -7,6 +7,9 @@ import ProfilePage from './pages/ProfilePage';
 import Header from './components/Header';
 import PrivateRoute from './components/PrivateRoute';
 import Calendrier from './pages/Calendrier';
+import About from './pages/QuiSommesNous';
+import Produits from './pages/Produits';
+import Rencontrer from './pages/Rencontrer';
 
 export default function App() {
   return (
@@ -16,6 +19,9 @@ export default function App() {
         <Route path='/' element={<Home />} />
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
+        <Route path='/about' element={<About/>} />
+        <Route path='/produits' element={<Produits/>} />
+        <Route path='/rencontrer' element={<Rencontrer/>} />
         <Route element={<PrivateRoute />}>
           <Route path='/profile_page' element={<ProfilePage/>} />
           <Route path='/calendrier' element={<Calendrier/>} />

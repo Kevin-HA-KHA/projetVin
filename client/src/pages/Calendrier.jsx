@@ -4,9 +4,9 @@ import { InlineWidget, PopupWidget, PopupButton } from "react-calendly";
 function Aventure() {
   return (
     <div>
-      <InlineWidget url="https://calendly.com/kevinha27" />
+      <InlineWidget url="https://calendly.com/cmille749/30min?month=2024-03" />
       <PopupWidget
-        url="https://calendly.com/kevinha27"
+        url="https://calendly.com/cmille749/30min?month=2024-03"
         /*
          * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
          * specify the rootElement property to ensure that the modal is inserted into the correct domNode.

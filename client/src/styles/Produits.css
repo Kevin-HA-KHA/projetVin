@@ -1,0 +1,87 @@
+.nosProduits{
+    background-color: #20060fe7;
+    height: 920px;
+    width: 100%;
+    top: 0;
+
+}
+
+.decouvrez{
+    position: fixed;
+    color: white;
+    width: 29%;
+    background : linear-gradient( #000000fa, #0000003e );
+    display: flex;
+    justify-content: center;
+}
+
+.produits{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    margin-left: 31%;
+    top: 13%;
+    position: fixed
+
+
+}
+
+.produit{
+    height: 370px;
+    width: 390px;
+    background-color: #20060f4c;
+    margin: 20px;
+    border-radius: 2% ;
+    box-shadow: 1px 4px 10px 4px #999797;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.imgBottle{
+    height: 300px;
+}
+
+.descriptionProduit{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin-left: 4px;
+}
+
+
+p{
+    font-size: 15px;
+    letter-spacing: 2px;
+    display: flex;
+    vertical-align : middle;
+    text-align: center;
+    
+
+}
+
+.btnCTA{
+    height: 40px;
+    width: 160px;
+    border-radius: 20px;
+    background : linear-gradient( #6b0e2b, #ac043c );
+    color: white;
+    border: none;
+    font-size: large ;
+    box-shadow: 1px 1px 10px  #999797;
+    margin-top: 50px;
+}
+
+.btnCTA:hover{
+    cursor: pointer;
+    background : linear-gradient(#ac043c, #6b0e2b );
+}
+
+.imgBackground{
+    height: 98%;
+}
