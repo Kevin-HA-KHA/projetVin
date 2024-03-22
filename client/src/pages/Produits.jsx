@@ -1,7 +1,6 @@
 import React from 'react';
 import "../styles/Produits.css"
 import imgVerre from "../assets/images/test2.jpg"
-import imgBouteille from "../assets/images/bouteillerouge.png"
 import bottle from "../assets/images/Bottle.png";
 
 export default function Produits(){

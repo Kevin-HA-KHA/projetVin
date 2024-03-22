@@ -9,7 +9,7 @@
 .decouvrez{
     position: fixed;
     color: white;
-    width: 29%;
+    width: 34%;
     background : linear-gradient( #000000fa, #0000003e );
     display: flex;
     justify-content: center;
@@ -19,15 +19,15 @@
     display: flex;
     flex-wrap: wrap;
     width: 70%;
-    margin-left: 31%;
-    top: 13%;
+    margin-left: 39%;
+    top: 10%;
     position: fixed
 
 
 }
 
 .produit{
-    height: 370px;
+    height: 340px;
     width: 390px;
     background-color: #20060f4c;
     margin: 20px;
