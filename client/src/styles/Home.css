@@ -1,3 +1,99 @@
 body{
     height: 100vh;
 }
+
+.banner{
+    height: 150px;
+    width: 100%;
+    top: 70px;
+    color : white;
+    display: flex;
+    margin-left: 30px;
+    position: absolute;
+}
+
+.txtRdv{
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.logoSalon{
+    width: 15%;
+    height: 110px;
+    margin-top: 35px;
+
+}
+
+.savoirPlusSalon{
+    cursor: pointer;
+}
+
+
+.imgBanner{
+    filter: blur(3px);
+    height: 150px;
+    width: 100%;
+}
+
+.home{
+    width: 100%;
+    height: 70%;
+}
+
+.imgHome{
+    height: 600px;
+    width: 100%;
+}
+
+
+.rencontrezNous{
+    height: 180px;
+    width: 100%;
+    background-color: #ffffff8d;
+    margin-top: -180px;
+    color: #000;
+    position: absolute;
+    padding-left: 2%;
+}
+
+.btnRencontre{
+height: 40px;
+width: 170px;
+border-radius: 20px;
+background : linear-gradient( #6b0e2b, #ac043c );
+color: white;
+border: none;
+font-size: large ;
+box-shadow: 1px 1px 10px  #999797;
+margin-left: 45%;
+margin-top: 10px;
+cursor: pointer;
+}
+
+.btnRencontre:hover{
+    cursor: pointer;
+    background : linear-gradient(#ac043c, #6b0e2b );
+}
+
+
+.produitsHome{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+}
+
+.imgMap{
+    height: 600px;
+    width: 50%;
+}
+
+
+@media screen and (min-width: 900px) {
+    article {
+      padding: 1rem 3rem;
+    }
+  }
+  
