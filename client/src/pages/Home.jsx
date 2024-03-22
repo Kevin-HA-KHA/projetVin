@@ -50,7 +50,7 @@ export default function Home() {
      </section>
      <section className='sectionMap'>
      <h2>Nous retrouver</h2>
-     <img className="imgMap" src={map} alt="" />
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.1750890352323!2d3.261360530739369!3d46.31476858906936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f1280988647c11%3A0xda26b7e05d340184!2sDomaine%20Nebout%20Vignerons%20Ind%C3%A9pendants!5e0!3m2!1sfr!2sfr!4v1711122852779!5m2!1sfr!2sfr" width="600" height="450"></iframe>
       </section>
 
     </>
