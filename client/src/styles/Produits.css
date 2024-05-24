@@ -57,10 +57,9 @@
 
 p{
     font-size: 15px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     display: flex;
     vertical-align : middle;
-    text-align: center;
     
 
 }

@@ -1,0 +1,51 @@
+.histoire{
+    display: flex;
+}
+
+.leftSide{
+    height: 84vh;
+    width: 50%;
+}
+
+.imgDomaine{
+    height: 84vh;
+    width: 50%;
+    position: absolute;
+}
+
+.txt1{
+    height: 165px;
+    width: 250px;
+    position: relative;
+    margin-left: 50%;
+    margin-top: 7%;
+}
+
+.txt2{
+    height: 294px;
+    width: 461px;
+    background-color: white ;
+    position: relative;
+    margin-top: 30%;
+    
+}
+
+.rightSide{
+    height: 84vh;
+    width: 50%;
+
+}
+
+.passion, .famille{
+    display: flex;
+    margin: 3%;
+}
+
+.txtPassion, .txtFamille {
+    display: flex;
+    flex-direction: column;
+    margin: 0 3% 0 3%;
+    text-align: left;
+    letter-spacing: 0;
+}
+

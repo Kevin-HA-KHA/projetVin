@@ -1,0 +1,16 @@
+.domaine{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+}
+
+.txtDomaine{
+    margin: 10% 5% 0 10%;
+    letter-spacing: 0%;
+}
+
+.titreDomaine{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}

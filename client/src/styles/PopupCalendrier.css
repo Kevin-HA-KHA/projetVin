@@ -1,0 +1,54 @@
+.btnRencontreNous{
+    height: 45px;
+    width: 184px;
+    background-color: #6b0e2b ;
+    color: white;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: fixed;
+}
+
+.popupCalendrier{
+    height: 560px;
+    width: 800px;
+    visibility: visible;
+    position: fixed;
+    background-color: azure;
+    top: 26%;
+    left: 26%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    visibility: hidden;
+
+
+    
+}
+
+.compris{
+    height: 45px;
+    width: 110px;
+    background-color: #6b0e2b ;
+    color: white;
+    border-radius: 100px;
+    text-decoration: none;
+    border: #6b0e2b 1px solid;
+
+
+}
+
+.compris:hover{
+    background-color: #ac0b3e;
+    cursor: pointer;
+}

@@ -3,12 +3,14 @@ import "../styles/Produits.css"
 import imgVerre from "../assets/images/test5.jpg"
 import bottle from "../assets/images/Bottle.png";
 import { PopupWidget } from 'react-calendly';
+import PopupCalendrier from '../components/PopupCalendrier';
 
 export default function Rencontrer(){
   return(
     
     
     <div className='nosProduits'>
+        <PopupCalendrier/>
       <PopupWidget
         url="https://calendly.com/cmille749/30min?month=2024-03"
         /*
