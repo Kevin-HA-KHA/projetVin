@@ -12,7 +12,8 @@ export default function Rencontrer(){
     <div className='nosProduits'>
         <PopupCalendrier/>
       <PopupWidget
-        url="https://calendly.com/cmille749/30min?month=2024-03"
+        // url="https://calendly.com/cmille749/30min?month=2024-03"
+        url="https://calendly.com/kevinha27/reservation-de-creneau-s-il-vin"
         /*
          * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
          * specify the rootElement property to ensure that the modal is inserted into the correct domNode.

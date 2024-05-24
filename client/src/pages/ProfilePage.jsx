@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import "../styles/ProfilePage.css"
 import { useRef, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -13,6 +14,9 @@ import {
   signOut,
   errorReset
 } from '../redux/user/userSlice';
+
+import profilePicture from "../assets/images/profile_picture.png";
+
 
 export default function ProfilePage() {
     const dispatch = useDispatch();
@@ -106,7 +110,35 @@ export default function ProfilePage() {
 
     return (
         <div className='profil'>
-          <div className='change-profil'>
+          <div className="lateralNavbar">
+            <div className='level level-1'>
+              <img src={profilePicture} alt="image de profil" />
+              <div>Administrateur | {currentUser.username}</div>
+            </div>
+            <div className="level level-2">
+              <a href="#">Mes statistiques</a>
+              <a href="#">Gérer mon budget</a>
+            </div>
+            <div className="level level-3">
+              <a href="#">Mes salons</a>
+              <a href="#">Mes RDV</a>
+              <a href="#">Mes disponibilités</a>
+            </div>
+            <div className="level level-4">
+              <a href="#">Gérer mon profil</a>
+              <a href="#">Administrateur</a>
+            </div>
+            <div className="level level-5">
+              <a href="#">Gérer mes listes clients</a>
+              <a href="#">Mes listes de diffusion</a>
+            </div>
+            <Link><button onClick={handleSignOut} className=''>Se déconnecter</button></Link>
+          </div>
+
+
+
+
+          {/* <div className='change-profil'>
             <p className='username'>{currentUser.username}</p> 
             <form onSubmit={handleSubmit} className='flex-column'>
               <label htmlFor="username">Nom d'utilisateur</label>
@@ -132,20 +164,20 @@ export default function ProfilePage() {
               <button className=''>
                 {loading ? 'Chargement...' : 'Mettre à jour'}
               </button>
-              {/* <p className=''>{error && 'Une erreur est survenue!'}</p> */}
+              <p className=''>{error && 'Une erreur est survenue!'}</p>
           <div>
             <Link><button onClick={handleSignOut} className=''>Se déconnecter</button></Link>
             <Link><button onClick={handleDeleteAccount} className=''>Supprimer le compte</button></Link>
           </div>
-              {/* <p className=''>
+              <p className=''>
                 {updateSuccess && `Votre profil a bien été mis à jour !`}
-              </p> */}
+              </p>
           </form>
 
           </div>
           <div className='dashboard'>
             <h1>Tableau de bord</h1>  
-          </div>
+          </div> */}
         </div>
         
     )
