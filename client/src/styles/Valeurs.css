@@ -1,0 +1,68 @@
+.nosValeurs{
+    margin-top: 100px;
+}
+
+.valeurs{
+    display: flex;
+}
+
+.leftSide{
+    height: 84vh;
+    width: 50%;
+}
+
+.harmonie {
+    width: 95%;
+    padding: 0;
+    letter-spacing: 0;
+    font-size: 20px;
+    margin-left: 2%;
+    
+}
+
+.Valeurs{
+    display: flex;
+}
+
+.txtValeurs{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    letter-spacing: 0;
+    margin: 3%;
+
+
+}
+
+
+
+.rightSide{
+    height: 84vh;
+    width: 50%;
+
+}
+
+.env{
+
+    display: flex;
+}
+
+.txtEnv{
+    width: 30%;
+    margin: 3%;
+}
+
+.imgEnv{
+    margin-right: 3% ;
+}
+
+.durabilite{
+    display: flex;
+    margin: 3%;
+
+}
+
+.txtDurabilite{
+    margin: 3%;
+}
+
