@@ -1,0 +1,147 @@
+.nosProduits {
+    height: 100%;
+}
+
+.rencontrons-nous-body {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.rencontrons-nous-hero {
+    width: 100%;
+    height: 400px;
+    background-image: url(../assets/images/rencontrons_nous_hero.jpeg);
+    background-size: cover;
+    background-position-y: 20%;
+    position: relative;
+}
+
+
+.rencontrons-nous-hero-description { 
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    color: white;
+}
+
+.rencontrons-nous-hero-description > div {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-left: 2rem;
+}
+
+.rencontrons-nous-hero-description h2 {
+    font-size: 1.25rem;
+}
+
+.rencontrons-nous-hero-description p {
+    font-size: .9rem;
+}
+
+.rencontrons-nous-buttons {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.rencontrons-nous-buttons button {
+    height: 60px;
+    width: 80%;
+    border-radius: 10px 10px 0 0;
+    border: none;
+    font-weight: bold;
+}
+
+.formulaires {
+    width: 100%;
+    margin: 0 !important;
+    padding: 50px 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem;
+}
+
+.formulaires form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.formulaires form div {
+    width: 100%;
+}
+
+.formulaires form label {
+    justify-self: flex-start;
+}
+
+.formulaires form input {
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.row1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row1 button {
+    border: solid 1px black;
+    border-radius: 10px;
+    width: 40%;
+    background-color: white;
+    height: 40px;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+span {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row3 select {
+    height: 50px;
+    width: 40%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.row5 textarea {
+    resize: none;
+    width: 100%;
+    height: 130px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+form .send {
+    width: 30%;
+    height: 50px;
+    color: #fff;
+    background-color: grey;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}

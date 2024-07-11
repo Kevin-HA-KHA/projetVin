@@ -3,11 +3,28 @@ import "../styles/Footer.css";
 
 function Footer() {
   return (
-    <footer className="bg-slate-200">
-        <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="#" className="hover:underline">Codezilla™</a>. Tout droit réservé.</span>
-
-        </div>
+    <footer>
+      <div>
+        <h2>Nous contacter</h2> <br />
+        <ul>
+          <li><a href="mailto:silvin@mail.fr">silvin@mail.fr</a></li>
+          <li><a href="/rencontrer">Nous contacter</a></li>
+          <li><a href="/rencontrer">Prendre rendez vous</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Plan du site</h2> <br />
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/about">Qui sommes nous ?</a></li>
+          <li><a href="/produits">Nos produits</a></li>
+          <li><a href="/rencontrer">Contactez nous</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Mentions légales</h2> <br />
+        <p>S'il-vin ©️ Tout droit réservé</p>
+      </div>
         
     </footer>
   )

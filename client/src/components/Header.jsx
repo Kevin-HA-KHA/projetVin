@@ -28,7 +28,7 @@ export default function Header() {
               <li>Nos produits</li>
             </Link>
             <Link to='/rencontrer'>
-              <li>Nous rencontrer</li>
+              <li>Contactez nous</li>
             </Link>
             { currentUser ?
               <Link to='/profile_page'>

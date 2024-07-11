@@ -1,0 +1,63 @@
+.about-body {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.about-hero {
+    width: 100%;
+    height: 400px;
+    background-image: url(../assets/images/about_hero.jpeg);
+    background-size: cover;
+    background-position-y: 20%;
+    position: relative;
+}
+
+
+.about-description { 
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    color: white;
+}
+
+
+.about-description > div {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-left: 2rem;
+}
+
+.about-description h2 {
+    font-size: 1.25rem;
+}
+
+.about-description p {
+    font-size: .9rem;
+}
+
+.about-buttons {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #510000;
+}
+
+.about-buttons button {
+    height: 60px;
+    width: 20%;
+    border-radius: 10px 10px 0 0;
+    border: none;
+    font-weight: bold;
+}
