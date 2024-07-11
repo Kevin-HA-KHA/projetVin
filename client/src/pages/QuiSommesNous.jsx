@@ -52,7 +52,7 @@ export default function About() {
               onClick={() => { setSelection('region') }}
               style={{
                   backgroundColor: selection === 'region' ? 'white' : 'transparent',
-                  color: selection === 'region  ' ? 'black' : 'white'
+                  color: selection === 'region' ? 'black' : 'white'
                 }}
             >
               Notre région
@@ -62,10 +62,6 @@ export default function About() {
           {selection === 'valeur' ? <Valeur /> : null}
           {selection === 'domaine' ? <Domaine /> : null}
           {selection === 'region' ? <Region /> : null}
-    {/* <Histoire/>
-    <Valeur />
-    <Domaine />
-    <Region /> */}
 
       
 
