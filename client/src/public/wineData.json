@@ -1,0 +1,49 @@
+[
+    {
+      "id": 1,
+      "wineTitle": "Rubis Pinot noir",
+      "wineDate": "2020",
+      "wineDescription": "Ce vin rouge séduisant révèle une robe d'un rubis profond et offre un bouquet aromatique captivant, mêlant des notes de cerise, de framboise et d'épices douces. En bouche, sa texture soyeuse et ses tanins délicats laissent place à une finale persistante et élégante. À déguster avec des plats raffinés tels que des viandes grillées, des fromages affinés ou des plats de pâtes savoureux.",
+      "tagVineText": "Pinot noir",
+      "tagLocText": "Bourgogne",
+      "tagColorText": "Rouge",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/sil-vin-418010.appspot.com/o/product_pinot_noir.png?alt=media&token=b5f3a11c-f4fa-417c-9320-673810872150"
+    },
+    {
+      "id": 2,
+      "wineTitle": "Chardonnay",
+      "wineDate": "2019",
+      "tagVineText": "Chardonnay",
+      "tagLocText": "Bourgogne",
+      "tagColorText": "Blanc",
+      "imageUrl": "path_to_image_of_chardonnay"
+    },
+    {
+      "id": 3,
+      "wineTitle": "Merlot",
+      "wineDate": "2018",
+      "tagVineText": "Merlot",
+      "tagLocText": "Bordeaux",
+      "tagColorText": "Rouge",
+      "imageUrl": "path_to_image_of_merlot"
+    },
+    {
+      "id": 4,
+      "wineTitle": "Sauvignon Blanc",
+      "wineDate": "2020",
+      "tagVineText": "Sauvignon Blanc",
+      "tagLocText": "Loire",
+      "tagColorText": "Blanc",
+      "imageUrl": "path_to_image_of_sauvignon_blanc"
+    },
+    {
+      "id": 5,
+      "wineTitle": "Syrah",
+      "wineDate": "2017",
+      "tagVineText": "Syrah",
+      "tagLocText": "Rhône",
+      "tagColorText": "Rouge",
+      "imageUrl": "path_to_image_of_syrah"
+    }
+  ]
+  

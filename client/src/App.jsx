@@ -10,6 +10,7 @@ import Calendrier from './pages/Calendrier';
 import About from './pages/QuiSommesNous';
 import Produits from './pages/Produits';
 import Rencontrer from './pages/Rencontrer';
+import { PopupWidget} from 'react-calendly';
 
 export default function App() {
   return (
@@ -27,6 +28,14 @@ export default function App() {
           <Route path='/calendrier' element={<Calendrier/>} />
         </Route>
       </Routes>
+      {/* <PopupWidget
+            // url="https://calendly.com/cmille749/30min?month=2024-03"
+            url="https://calendly.com/kevinha27/reservation-de-creneau-s-il-vin"
+            rootElement={document.getElementById("root")}
+            text="Prendre rendez-vous"
+            textColor="#ffffff"
+            color="#6b0e2b"
+        /> */}
       <Footer />
     </BrowserRouter>
   );

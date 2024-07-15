@@ -2,6 +2,7 @@ import React from 'react';
 import "../styles/Produits.css"
 import imgVerre from "../assets/images/test2.jpg"
 import bottle from "../assets/images/Bottle.png";
+import MeilleureVente from '../components/MeilleureVente.jsx';
 
 export default function Produits(){
     const [selection, setSelection] = React.useState('meilleur');
@@ -19,41 +20,41 @@ export default function Produits(){
             <button 
               onClick={() => { setSelection('meilleur') } }
               style={{
-                  backgroundColor: selection === 'meilleur' ? 'white' : 'transparent',
-                  color: selection === 'meilleur' ? 'black' : 'white'
+                  backgroundColor: selection === 'meilleur' ? '#F3F3F3' : 'transparent',
+                  color: selection === 'meilleur' ? 'black' : '#F3F3F3'
                 }}
             >
-              Notre histoire
+              Nos meilleures ventes
             </button>
             <button 
               onClick={() => { setSelection('nouveaute') }}
               style={{
-                  backgroundColor: selection === 'nouveaute' ? 'white' : 'transparent',
-                  color: selection === 'nouveaute' ? 'black' : 'white'
+                  backgroundColor: selection === 'nouveaute' ? '#F3F3F3' : 'transparent',
+                  color: selection === 'nouveaute' ? 'black' : '#F3F3F3'
                 }}
             >
-              Nos valeurs
+              Les nouveautés
             </button>
             <button 
               onClick={() => { setSelection('recompense') }}
               style={{
-                  backgroundColor: selection === 'recompense' ? 'white' : 'transparent',
-                  color: selection === 'recompense' ? 'black' : 'white'
+                  backgroundColor: selection === 'recompense' ? '#F3F3F3' : 'transparent',
+                  color: selection === 'recompense' ? 'black' : '#F3F3F3'
                 }}
             >
-              Notre domaine
+              Les récompensés
             </button>
             <button 
               onClick={() => { setSelection('tous') }}
               style={{
-                  backgroundColor: selection === 'tous' ? 'white' : 'transparent',
-                  color: selection === 'tous' ? 'black' : 'white'
+                  backgroundColor: selection === 'tous' ? '#F3F3F3' : 'transparent',
+                  color: selection === 'tous' ? 'black' : '#F3F3F3'
                 }}
             >
-              Notre région
+              Tous nos produits
             </button>
           </div>
-              
+          {selection === 'meilleur' ? <MeilleureVente /> : null}
       </div>
 
       // <div className='nosProduits'>

@@ -4,7 +4,7 @@ import "../styles/Rencontrer.css";
 import imgVerre from "../assets/images/test5.jpg";
 import bottle from "../assets/images/Bottle.png";
 import hero from "../assets/images/rencontrons_nous_hero.jpeg";
-import { PopupWidget } from 'react-calendly';
+import { PopupWidget, InlineWidget } from 'react-calendly';
 import PopupCalendrier from '../components/PopupCalendrier';
 
 export default function Rencontrer() {
@@ -36,7 +36,7 @@ export default function Rencontrer() {
           >
             Envoyer nous un message
           </button>
-          {/* <button 
+          <button 
             onClick={() => { setButtonSwitch(true) }}
             style={{
                 backgroundColor: buttonSwitch === true ? 'white' : 'transparent',
@@ -44,7 +44,7 @@ export default function Rencontrer() {
               }}
           >
             Rencontrez nous
-          </button> */}
+          </button>
         </div>
         {buttonSwitch === false ? 
             <div className="formulaires">
@@ -88,22 +88,12 @@ export default function Rencontrer() {
                 </form>
             </div>
         :         
-            
-           ""
+            <div className="rdv">
+              <InlineWidget url="https://calendly.com/kevinha27/reservation-de-creneau-s-il-vin" styles={{ height: '700px' }} />
+            </div>
         }
         </div>
-        <PopupWidget
-            // url="https://calendly.com/cmille749/30min?month=2024-03"
-            url="https://calendly.com/kevinha27/reservation-de-creneau-s-il-vin"
-            /*
-             * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
-             * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
-             */
-            rootElement={document.getElementById("root")}
-            text="Prendre rendez-vous"
-            textColor="#ffffff"
-            color="#6b0e2b"
-            />
+
 
         {/* <PopupCalendrier /> */}
 
