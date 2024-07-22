@@ -1,16 +1,34 @@
-.domaine{
+.domaine-main {
     width: 100%;
-    height: 90vh;
     display: flex;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.domaine > h1 {
+    font-size: 2.5rem;
+    font-family: "Quasimoda W03 ExtraBold", sans-serif;
+    color: #510000;
+    margin-bottom: 100px;
+}
+
+.domaine{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .txtDomaine{
-    margin: 10% 5% 0 10%;
+    /* margin: 7% 5% 0 7%; */
+    width: 80%;
     letter-spacing: 0%;
 }
 
 .titreDomaine{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     padding-bottom: 30px;
 }

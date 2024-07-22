@@ -10,7 +10,7 @@ import "../styles/Histoire.css"
 
 function Histoire() {
     return (
-        <>
+        <main className='histoire-main'>
             <h1>Notre Histoire</h1>
             <div className='histoire'>
                 <div className='leftSide'>
@@ -58,7 +58,7 @@ function Histoire() {
                 </div>
             
             </div>
-        </>
+        </main>
     );
 }
 

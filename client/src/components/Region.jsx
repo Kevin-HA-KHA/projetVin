@@ -7,7 +7,7 @@ import region4 from "../assets/images/region4.png"
 
 function Domaine() {
     return (
-        <>
+        <main className="region-main">
             <h1>Notre région</h1>
            <div className='region'>
                 <div className='regionLeft'>
@@ -70,7 +70,7 @@ function Domaine() {
                 </div>
             
            </div>
-        </>
+        </main>
     );
 }
 

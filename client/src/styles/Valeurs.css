@@ -1,13 +1,20 @@
-.nosValeurs{
+main.valeur-main {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+main.valeur-main .nosValeurs{
     margin-top: 100px;
 }
 
-.valeurs{
+main.valeur-main .valeurs{
     display: flex;
 }
 
-.leftSide{
-    height: 84vh;
+main.valeur-main .leftSide{
+    /* height: 84vh; */
+    height: 80%;
     width: 50%;
 }
 
@@ -36,8 +43,9 @@
 
 
 
-.rightSide{
-    height: 84vh;
+main.valeur-main .rightSide{
+    /* height: 84vh; */
+    height: 80%;
     width: 50%;
 
 }

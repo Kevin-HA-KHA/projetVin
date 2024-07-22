@@ -7,9 +7,9 @@ import "../styles/Valeurs.css"
 
 function Domaine() {
     return (
-        <>
-            <h1>Notre domaine</h1>
+        <div className='domaine-main'>
            <div className='domaine'>
+                <h1>Notre domaine</h1>
                 <div className='txtDomaine'> 
                     <h2 className='titreDomaine'>L'Essence des Terres de Bourgognes</h2>
                     <p>Au cœur des prestigieuses terres bourguignonnes, notre domaine viticole s'épanouit dans un écrin de 
@@ -27,10 +27,9 @@ function Domaine() {
                         même de la Bourgogne et offrant une expérience de dégustation inoubliable. 
                     </p>
                 </div>
-            
-                <img src={imgPinot} alt="" />
-           </div>
-        </>
+            </div>
+            <img src={imgPinot} alt="" />
+        </div>
     );
 }
 

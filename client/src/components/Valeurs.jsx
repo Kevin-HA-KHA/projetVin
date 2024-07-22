@@ -10,7 +10,7 @@ import "../styles/Valeurs.css"
 
 function Valeur() {
     return (
-        <>
+        <main className='valeur-main'>
             <h1 className='nosValeurs'>Nos valeurs</h1>
             <div className='valeurs'>
                 <div className='leftSide'>
@@ -78,7 +78,7 @@ function Valeur() {
                 </div>
             
             </div>
-        </>
+        </main>
     );
 }
 

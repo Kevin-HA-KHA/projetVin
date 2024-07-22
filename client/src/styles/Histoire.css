@@ -1,14 +1,30 @@
-.histoire{
-    display: flex;
+main.histoire-main{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
 }
 
-.leftSide{
-    height: 84vh;
+main > h1 {
+    font-size: 2.5rem;
+    margin: 3%;
+    font-family: "Quasimoda W03 ExtraBold", sans-serif;
+    color: #510000;
+} 
+
+.histoire{
+    display: flex;
+    /* height: 100vh; */
+}
+
+main.histoire-main .leftSide{
+    /* height: 84vh; */
+    height: 80%;
     width: 50%;
 }
 
 .imgDomaine{
-    height: 84vh;
+    /* height: 84vh; */
+    height: 80%;
     width: 50%;
     position: absolute;
 }
@@ -30,8 +46,9 @@
     
 }
 
-.rightSide{
-    height: 84vh;
+main.histoire-main .rightSide{
+    /* height: 84vh; */
+    height: 80%;
     width: 50%;
 
 }
