@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "wineTitle": "Rubis Pinot noir",
+      "wineDate": "2020",
+      "wineDescription": "Ce vin rouge séduisant révèle une robe d'un rubis profond et offre un bouquet aromatique captivant, mêlant des notes de cerise, de framboise et d'épices douces. </br></br> En bouche, sa texture soyeuse et ses tanins délicats laissent place à une finale persistante et élégante. À déguster avec des plats raffinés tels que des viandes grillées, des fromages affinés ou des plats de pâtes savoureux.",
+      "tagVineText": "Pinot noir",
+      "tagLocText": "Bourgogne",
+      "tagColorText": "Rouge",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/sil-vin-418010.appspot.com/o/product_pinot_noir.png?alt=media&token=b5f3a11c-f4fa-417c-9320-673810872150"
+    },
+    {
+      "id": 2,
+      "wineTitle": "Clos des mouches",
+      "wineDate": "2019",
+      "wineDescription": "Un vin d'exception. La robe est d'un beau rouge rubis profond, avec toute la luminosité des grands Bourgogne. Le nez est à la fois intense et frais pour les vins jeunes. Les notes primaires de fruits rouges dominent : mûres, griottes, framboises. La complexité se dessine avec des nuances de fumé, évoluant vers la réglisse. </br></br> En bouche, une attaque franche, nette, charnue. Fermeté sans rudesse, densité sans lourdeur. Une grande fraîcheur pour les vins jeunes. Avec l'âge, le vin s'arrondit et prend du gras et du relief, avec une texture soyeuse apportée par les tannins.",
+      "tagVineText": "Pinot Noir",
+      "tagLocText": "Beaune",
+      "tagColorText": "Rouge",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/sil-vin-418010.appspot.com/o/product_clos_des_mouches.png?alt=media&token=fb7204d4-cf9c-40b8-a3b9-8d6b4b22d790"
+    },
+    {
+      "id": 3,
+      "wineTitle": "Elégance",
+      "wineDate": "2013",
+      "wineDescription": "Il est produit exclusivement à partir de raisins Chardonnay, récoltés et sélectionnés entièrement à la main. Le moût fermente en petits fûts de chêne. Même l'élevage, qui dure quelques mois, a lieu en petits fûts de chêne. </br></br>Le Chardonnay Elégance de Prosper Maufoux a une couleur jaune paille avec des reflets dorés. Le nez montre des notes captivantes de fleurs blanches et de fruits tropicaux, enveloppées dans une légère touche grillée. En bouche, il est grand et rond, avec une finale agréablement acide, sapide et minérale.",
+      "tagVineText": "Chardonnay",
+      "tagLocText": "Bourgogne",
+      "tagColorText": "Blanc",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/sil-vin-418010.appspot.com/o/product_elegance.png?alt=media&token=f5ef072a-f0d1-4f46-bc20-8d49ee7f3429"
+    }
+  ]
+  

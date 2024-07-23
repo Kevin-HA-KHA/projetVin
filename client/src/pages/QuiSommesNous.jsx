@@ -5,7 +5,7 @@ import Histoire from '../components/Histoire';
 import Valeur from '../components/Valeurs';
 import Domaine from '../components/Domaine';
 import Region from '../components/Region';
-
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default function About() {
   const [selection, setSelection] = useState('histoire');
@@ -58,11 +58,48 @@ export default function About() {
               Notre région
             </button>
           </div>
-          {selection === 'histoire' ? <Histoire /> : null}
+          {/* {selection === 'histoire' ? <Histoire /> : null}
           {selection === 'valeur' ? <Valeur /> : null}
           {selection === 'domaine' ? <Domaine /> : null}
-          {selection === 'region' ? <Region /> : null}
-
+          {selection === 'region' ? <Region /> : null} */}
+      <TransitionGroup>
+        {selection === 'histoire' && (
+          <CSSTransition
+            key="histoire"
+            timeout={300}
+            classNames="fade"
+          >
+            <Histoire />
+          </CSSTransition>
+        )}
+        {selection === 'valeur' && (
+          <CSSTransition
+            key="valeur"
+            timeout={300}
+            classNames="fade"
+          >
+            <Valeur />
+          </CSSTransition>
+        )}
+        {selection === 'domaine' && (
+          <CSSTransition
+            key="domaine"
+            timeout={300}
+            classNames="fade"
+          >
+            <Domaine />
+          </CSSTransition>
+        )}
+        {selection === 'region' && (
+          <CSSTransition
+            key="region"
+            timeout={300}
+            classNames="fade"
+          >
+            <Region />
+          </CSSTransition>
+        )}
+      </TransitionGroup>
       
 
     </div>

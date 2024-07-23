@@ -3,6 +3,10 @@ import "../styles/Produits.css"
 import imgVerre from "../assets/images/test2.jpg"
 import bottle from "../assets/images/Bottle.png";
 import MeilleureVente from '../components/MeilleureVente.jsx';
+import Nouveaute from '../components/Nouveaute.jsx';
+import Recompense from '../components/Recompense.jsx';
+import Tous from '../components/Tous.jsx';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default function Produits(){
     const [selection, setSelection] = React.useState('meilleur');
@@ -54,7 +58,44 @@ export default function Produits(){
               Tous nos produits
             </button>
           </div>
-          {selection === 'meilleur' ? <MeilleureVente /> : null}
+          <TransitionGroup>
+            {selection === 'meilleur' && (
+              <CSSTransition
+                key="meilleur"
+                timeout={300}
+                classNames="fade"
+              >
+                <MeilleureVente />
+              </CSSTransition>
+            )}
+            {selection === 'nouveaute' && (
+              <CSSTransition
+                key="nouveaute"
+                timeout={300}
+                classNames="fade"
+              >
+                <Nouveaute />
+              </CSSTransition>
+            )}
+            {selection === 'recompense' && (
+              <CSSTransition
+                key="recompense"
+                timeout={300}
+                classNames="fade"
+              >
+                <Recompense />
+              </CSSTransition>
+            )}
+            {selection === 'tous' && (
+              <CSSTransition
+                key="tous"
+                timeout={300}
+                classNames="fade"
+              >
+                <Tous />
+              </CSSTransition>
+            )}
+          </TransitionGroup>
       </div>
 
       // <div className='nosProduits'>

@@ -1,15 +1,13 @@
-
-import "../styles/MeilleureVente.css";
+import "../styles/Nouveaute.css";
 import { useState, useEffect } from "react";
 
 import tag_vine from "../assets/images/tag_vine.png";
 import tag_localisation from "../assets/images/tag_localisation.png";
 import tag_color from "../assets/images/tag_color.png";
-// import product_pinot_noir from "../assets/images/product_pinot_noir.png";
 import wine_circle from "../assets/images/wine_circle.png";
 
 
-function MeilleureVente() {
+function Nouveaute() {
 
     const [wines, setWines] = useState([]);
     const [selectedWine, setSelectedWine] = useState(null);
@@ -27,8 +25,8 @@ function MeilleureVente() {
     };
 
     useEffect(() => {
-        const localURL = '/wineDataMeilleur.json';
-        const backupURL = '../src/assets/data/wineDataMeilleur.json';
+        const localURL = '/wineDataNouveaute.json';
+        const backupURL = '../src/assets/data/wineDataNouveaute.json';
         
         
         fetchWineData(localURL) // Set the initial selected wine to the first one
@@ -112,6 +110,8 @@ function MeilleureVente() {
             </div>
         </main>
     );
+
 }
 
-export default MeilleureVente;
+
+export default Nouveaute;

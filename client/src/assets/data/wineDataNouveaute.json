@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "wineTitle": "Rubis Pinot noir",
+      "wineDate": "2020",
+      "wineDescription": "Ce vin rouge séduisant révèle une robe d'un rubis profond et offre un bouquet aromatique captivant, mêlant des notes de cerise, de framboise et d'épices douces. </br></br> En bouche, sa texture soyeuse et ses tanins délicats laissent place à une finale persistante et élégante. À déguster avec des plats raffinés tels que des viandes grillées, des fromages affinés ou des plats de pâtes savoureux.",
+      "tagVineText": "Pinot noir",
+      "tagLocText": "Bourgogne",
+      "tagColorText": "Rouge",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/sil-vin-418010.appspot.com/o/product_pinot_noir.png?alt=media&token=b5f3a11c-f4fa-417c-9320-673810872150"
+    },
+    {
+      "id": 2,
+      "wineTitle": "Clos des mouches",
+      "wineDate": "2019",
+      "wineDescription": "Un vin d'exception. La robe est d'un beau rouge rubis profond, avec toute la luminosité des grands Bourgogne. Le nez est à la fois intense et frais pour les vins jeunes. Les notes primaires de fruits rouges dominent : mûres, griottes, framboises. La complexité se dessine avec des nuances de fumé, évoluant vers la réglisse. </br></br> En bouche, une attaque franche, nette, charnue. Fermeté sans rudesse, densité sans lourdeur. Une grande fraîcheur pour les vins jeunes. Avec l'âge, le vin s'arrondit et prend du gras et du relief, avec une texture soyeuse apportée par les tannins.",
+      "tagVineText": "Pinot Noir",
+      "tagLocText": "Beaune",
+      "tagColorText": "Rouge",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/sil-vin-418010.appspot.com/o/product_clos_des_mouches.png?alt=media&token=fb7204d4-cf9c-40b8-a3b9-8d6b4b22d790"
+    }
+  ]
+  
