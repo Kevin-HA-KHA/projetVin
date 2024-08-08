@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "../styles/Home.css"
 import banner from "../assets/images/banner.png"
 import logoSalon from "../assets/images/logosalon.png"
@@ -8,16 +8,41 @@ import map from "../assets/images/map.png"
 
 
 export default function Home() {
+  const [event, setEvent] = useState(null);
+
+  useEffect(() => {
+    const fetchEvent = async () => {
+      try {
+        const response = await fetch('/api/event'); // L'URL correcte
+        const data = await response.json();
+        setEvent(data);
+      } catch (error) {
+        console.error('Error fetching event details:', error);
+      }
+    };
+
+    fetchEvent();
+  }, []);
+
+  if (!event) return <div>...</div>;
+
+
   return (
-    <>
-      <img className='imgBanner' src={banner} alt="" />
+    <div className='home-container'>
      <div className='banner'>
+        <div class="banner-background"></div>
+      {/* <img className='imgBanner' src={banner} alt="" /> */}
         <div className='txtRdv'>
-          <h2>Retrouvez nous du  <bold>22/03/2024</bold>  au <bold>25/03/2024</bold>  au <bold>WINEPARIS</bold> Paris parc des expositions   </h2>
+          <h2>Retrouvez nous du <bold>{event.startDate}</bold> au <bold>{event.endDate}</bold> au <bold>{event.eventName}</bold> {event.location}</h2>
+            <p>{event.description}</p>
+            <a className='savoirPlusSalon' href={event.moreInfoLink} target='_blank'>En savoir plus sur le salon</a>
+          </div>
+          <img className='logoSalon' src={event.logoUrl} alt="Logo Salon" />
+          {/* <h2>Retrouvez nous du  <bold>22/03/2024</bold>  au <bold>25/03/2024</bold>  au <bold>WINEPARIS</bold> Paris parc des expositions   </h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse hendrerit sem erat, sed maximus libero efficitur eu. In enim dolor.</p>
           <p className='savoirPlusSalon'>En savoir plus sur le salon</p>
         </div>
-        <img className='logoSalon' src={logoSalon} alt="" />
+        <img className='logoSalon' src={logoSalon} alt="" /> */}
      </div>
      <div className='home'>
       <img className="imgHome" src={imgHome} alt="" />
@@ -53,6 +78,6 @@ export default function Home() {
      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.1750890352323!2d3.261360530739369!3d46.31476858906936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f1280988647c11%3A0xda26b7e05d340184!2sDomaine%20Nebout%20Vignerons%20Ind%C3%A9pendants!5e0!3m2!1sfr!2sfr!4v1711122852779!5m2!1sfr!2sfr" width="600" height="450"></iframe>
       </section>
 
-    </>
+    </div>
   )
 }

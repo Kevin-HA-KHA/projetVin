@@ -1,0 +1,55 @@
+body {
+    height: 600px;
+}
+
+.singin-banner {
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.singin-block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px
+}
+
+.singin {
+    width: 40%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F1F1F1;
+    padding: 20px 70px;
+    border-radius: 10px;
+}
+
+.singin .intro {
+    margin-bottom: 20px;
+    color: #510000;
+    font-family: "Quasimoda W03 ExtraBold", sans-serif;
+}
+
+.singin label {
+    color: #510000;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+.singin input {
+    margin-bottom: 5px;
+}
+
+
+.singup-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

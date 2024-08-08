@@ -6,6 +6,7 @@ import {
   signInFailure,
 } from '../redux/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import '../styles/SignIn.css';
 
 
 export default function SignIn() {
@@ -42,9 +43,8 @@ export default function SignIn() {
   };
   return (
     <div className='container'>
-            <div className='banner singin-banner container flex-center'>
-    
-      <div className='singin singin-block'>
+      <div className='banner singin-banner container flex-center'>
+      <div className='singin-block'>
         {/* <h1 className=''>Connexion</h1> */}
         <form onSubmit={handleSubmit} className='singin'>
         <div className="intro">

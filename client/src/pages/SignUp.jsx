@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import '../styles/SignUp.css';
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
@@ -29,17 +30,18 @@ export default function SignUp() {
         setError(true);
         return;
       }
-      navigate('/sign-in');
+      navigate('/admin');
     } catch (error) {
       setLoading(false);
       setError(true);
     }
   };
   return (
-          <div className='container'>
-            <div className='banner singin-banner container flex-center'>
-    
-      <form onSubmit={handleSubmit} className='singup singup-block'>
+
+<div className='container'>
+  <div className='banner singup-banner container flex-center'>
+    <div className='singup-block'>
+      <form onSubmit={handleSubmit} className='singup'>
         <div className='intro'>
           <h1 className=''>Créer un compte</h1>
         </div>
@@ -64,14 +66,15 @@ export default function SignUp() {
             className=''
           >
             {loading ? 'Chargement...' : 'S\'inscrire'}
-          </button>
+        </button>
+      </form>
       <div className='singup-link'>
-        <Link to='/sign-in'>
+        <Link to='/admin'>
           <span className=''>Déjà un compte ?</span>
         </Link>
       </div>
-      </form>
       <p className=''>{error && 'Une erreur s\'est produite!'}</p>
+    </div>
     </div>
     </div>
   );
