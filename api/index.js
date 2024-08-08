@@ -7,6 +7,7 @@ import eventRoutes from './routes/event.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 dotenv.config();
+import cors from 'cors';
 
 mongoose
   .connect(process.env.MONGO)
@@ -22,6 +23,10 @@ const __dirname = path.resolve();
 const app = express();
 
 app.use(express.json());
+
+app.use(cors({
+  origin: '*',
+}));
 
 app.use(cookieParser());
 
