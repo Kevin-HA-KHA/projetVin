@@ -1,7 +1,3 @@
-body {
-    height: 600px;
-}
-
 .singup-banner {
     height: 600px;
     display: flex;
@@ -47,9 +43,20 @@ body {
     margin-bottom: 5px;
 }
 
-
 .singup-link {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.singup-block button {
+    margin-top: 10px;
+}
+
+.admin-error {
+    color: #510000;
+    font-family: sans-serif;
+    position: absolute;
+    text-decoration: underline;
+    bottom: 10%;
 }

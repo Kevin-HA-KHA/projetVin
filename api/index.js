@@ -39,12 +39,18 @@ app.listen(port, () => {
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/event', eventRoutes);
-
-app.use(express.static(path.join(__dirname, '/client/dist')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+app.use('/*', (req, res) => {
+  res.status(404).json({
+    success: false,
+    message: 'Chemin non trouvé',
+  });
 });
+
+// app.use(express.static(path.join(__dirname, '/client/dist')));
+
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+// });
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;

@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const response = await fetch('/api/event'); // L'URL correcte
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/event`); // L'URL correcte
         const data = await response.json();
         setEvent(data);
       } catch (error) {
@@ -33,16 +33,11 @@ export default function Home() {
         <div class="banner-background"></div>
       {/* <img className='imgBanner' src={banner} alt="" /> */}
         <div className='txtRdv'>
-          <h2>Retrouvez nous du <bold>{event.startDate}</bold> au <bold>{event.endDate}</bold> au <bold>{event.eventName}</bold> {event.location}</h2>
+          <h2>Retrouvez nous du <span>{event.startDate}</span> au <span>{event.endDate}</span> au <span>{event.eventName}</span>, {event.location}</h2>
             <p>{event.description}</p>
             <a className='savoirPlusSalon' href={event.moreInfoLink} target='_blank'>En savoir plus sur le salon</a>
           </div>
           <img className='logoSalon' src={event.logoUrl} alt="Logo Salon" />
-          {/* <h2>Retrouvez nous du  <bold>22/03/2024</bold>  au <bold>25/03/2024</bold>  au <bold>WINEPARIS</bold> Paris parc des expositions   </h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse hendrerit sem erat, sed maximus libero efficitur eu. In enim dolor.</p>
-          <p className='savoirPlusSalon'>En savoir plus sur le salon</p>
-        </div>
-        <img className='logoSalon' src={logoSalon} alt="" /> */}
      </div>
      <div className='home'>
       <img className="imgHome" src={imgHome} alt="" />

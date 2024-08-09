@@ -23,7 +23,7 @@ export default function SignIn() {
     e.preventDefault();
     try {
       dispatch(signInStart());
-      const res = await fetch('/api/auth/signin', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/signin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ export default function SignIn() {
             <span className=''>Créer un compte</span>
           </Link>
         </div>
-        <p className=''>
+        <p className='admin-error'>
           {error ? error.message || 'Une erreur s\'est produite!' : ''}
         </p>
 
