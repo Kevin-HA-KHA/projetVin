@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
 import eventRoutes from './routes/event.route.js';
+import clientRoutes from './routes/client.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 dotenv.config();
@@ -39,6 +40,7 @@ app.listen(port, () => {
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/event', eventRoutes);
+app.use('/api/client', clientRoutes);
 app.use('/*', (req, res) => {
   res.status(404).json({
     success: false,

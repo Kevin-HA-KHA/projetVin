@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import SignIn from './pages/SignIn';
@@ -10,12 +10,18 @@ import Calendrier from './pages/Calendrier';
 import About from './pages/QuiSommesNous';
 import Produits from './pages/Produits';
 import Rencontrer from './pages/Rencontrer';
+import HeaderAdmin from './components/HeaderAdmin';
 import { PopupWidget} from 'react-calendly';
 
-export default function App() {
+
+function AppContent() {
+  const location = useLocation();
+  const isProfilePage = location.pathname === '/profile_page';
+
   return (
-    <BrowserRouter>
-      <Header />
+    <>
+      { !isProfilePage && <Header /> }
+      { isProfilePage && <HeaderAdmin /> }
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/admin' element={<SignIn/>} />
@@ -28,15 +34,15 @@ export default function App() {
           <Route path='/calendrier' element={<Calendrier/>} />
         </Route>
       </Routes>
-      {/* <PopupWidget
-            // url="https://calendly.com/cmille749/30min?month=2024-03"
-            url="https://calendly.com/kevinha27/reservation-de-creneau-s-il-vin"
-            rootElement={document.getElementById("root")}
-            text="Prendre rendez-vous"
-            textColor="#ffffff"
-            color="#6b0e2b"
-        /> */}
-      <Footer />
+      { !isProfilePage && <Footer /> }
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }

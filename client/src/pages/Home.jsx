@@ -24,21 +24,31 @@ export default function Home() {
     fetchEvent();
   }, []);
 
-  if (!event) return <div>...</div>;
+  // if (!event) return <div>...</div>;
 
 
   return (
     <div className='home-container'>
-     <div className='banner'>
+      {event ? (
+        <div className='banner'>
+          <div className="banner-background"></div>
+          <div className='txtRdv'>
+            <h2>Retrouvez nous du <span>{event.startDate}</span> au <span>{event.endDate}</span> au <span>{event.eventName}</span>, {event.location}</h2>
+            <p>{event.description}</p>
+            <a className='savoirPlusSalon' href={event.moreInfoLink} target='_blank'>En savoir plus sur le salon</a>
+          </div>
+          <img className='logoSalon' src={event.logoUrl} alt="Logo Salon" />
+        </div>
+      ) : null}
+     {/* <div className='banner'>
         <div class="banner-background"></div>
-      {/* <img className='imgBanner' src={banner} alt="" /> */}
         <div className='txtRdv'>
           <h2>Retrouvez nous du <span>{event.startDate}</span> au <span>{event.endDate}</span> au <span>{event.eventName}</span>, {event.location}</h2>
             <p>{event.description}</p>
             <a className='savoirPlusSalon' href={event.moreInfoLink} target='_blank'>En savoir plus sur le salon</a>
           </div>
           <img className='logoSalon' src={event.logoUrl} alt="Logo Salon" />
-     </div>
+     </div> */}
      <div className='home'>
       <img className="imgHome" src={imgHome} alt="" />
       <div className='rencontrezNous'>
