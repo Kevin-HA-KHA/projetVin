@@ -13,38 +13,53 @@ function Nouveaute() {
     const [selectedWine, setSelectedWine] = useState(null);
     const [transitionClass, setTransitionClass] = useState('');
 
-    const fetchWineData = async (url) => {
-        try {
-            const response = await fetch(url);
-            if (!response.ok) throw new Error('Network response was not ok');
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            throw error;
-        }
-    };
+    // const fetchWineData = async (url) => {
+    //     try {
+    //         const response = await fetch(url);
+    //         if (!response.ok) throw new Error('Network response was not ok');
+    //         const data = await response.json();
+    //         return data;
+    //     } catch (error) {
+    //         throw error;
+    //     }
+    // };
+
+    // useEffect(() => {
+    //     const localURL = '/wineDataNouveaute.json';
+    //     const backupURL = '../src/assets/data/wineDataNouveaute.json';
+        
+        
+    //     fetchWineData(localURL) // Set the initial selected wine to the first one
+    //         .then(data => {
+    //             setWines(data);
+    //             setSelectedWine(data[0]); 
+    //         })
+    //         .catch(() => {
+    //             fetchWineData(backupURL)
+    //                 .then(data => {
+    //                     setWines(data);
+    //                     setSelectedWine(data[0]);
+    //                 })
+    //                 .catch(error => {
+    //                     console.error('Failed to load wine data:', error);
+    //                 });
+    //         });
+    // }, []);
 
     useEffect(() => {
-        const localURL = '/wineDataNouveaute.json';
-        const backupURL = '../src/assets/data/wineDataNouveaute.json';
-        
-        
-        fetchWineData(localURL) // Set the initial selected wine to the first one
-            .then(data => {
-                setWines(data);
-                setSelectedWine(data[0]); 
-            })
-            .catch(() => {
-                fetchWineData(backupURL)
-                    .then(data => {
-                        setWines(data);
-                        setSelectedWine(data[0]);
-                    })
-                    .catch(error => {
-                        console.error('Failed to load wine data:', error);
-                    });
-            });
-    }, []);
+        const fetchEvent = async () => {
+          try {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/wine/nouveaute`); 
+            const data = await response.json();
+            setWines(data);
+            setSelectedWine(data[0]); 
+          } catch (error) {
+            console.error('Error fetching event details:', error);
+          }
+        };
+    
+        fetchEvent();
+      }, []);
 
     const handleSelectWine = (wine) => {
         setTransitionClass('fade-out');
@@ -95,18 +110,20 @@ function Nouveaute() {
                     <img className="circle" src={wine_circle} alt="fond blanc" />
                 </div>
             </div>
-            <div className="wine-list">
-                {wines.map(wine => (
-                    <div
-                        key={wine.id}
-                        className={`wine-item ${wine === selectedWine ? 'selected' : ''}`}
-                        onClick={() => wine === selectedWine ? null : handleSelectWine(wine)}
-                    >
-                        <img src={wine.imageUrl} alt={wine.wineTitle} />
-                        <h3>{wine.wineTitle}</h3>
-                        <span>{wine.wineDate}</span>
-                    </div>
-                ))}
+            <div className="wine-list-box">
+                <div className="wine-list">
+                    {wines.map(wine => (
+                        <div
+                            key={wine.id}
+                            className={`wine-item ${wine === selectedWine ? 'selected' : ''}`}
+                            onClick={() => wine === selectedWine ? null : handleSelectWine(wine)}
+                        >
+                            <img src={wine.imageUrl} alt={wine.wineTitle} />
+                            <h3>{wine.wineTitle}</h3>
+                            <span>{wine.wineDate}</span>
+                        </div>
+                    ))}
+                </div>
             </div>
         </main>
     );

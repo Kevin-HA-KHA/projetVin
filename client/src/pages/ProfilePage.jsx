@@ -117,10 +117,11 @@ export default function ProfilePage() {
               <img src={profilePicture} alt="image de profil" />
               <div>Administrateur | {currentUser.username}</div>
             </div>
-            {/* <div className="level level-2">
-              <a href="#">Mes statistiques</a>
-              <a href="#">Gérer mon budget</a>
-            </div> */}
+            <div className="level level-2">
+              <a href="#">Gérer les vins</a>
+              {/* <a href="#">Mes statistiques</a>
+              <a href="#">Gérer mon budget</a> */}
+            </div>
             <div className="level level-3">
               {/* <a href="#">Mes salons</a>
               <a href="#">Mes RDV</a>

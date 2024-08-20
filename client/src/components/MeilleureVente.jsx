@@ -51,7 +51,7 @@ function MeilleureVente() {
     useEffect(() => {
         const fetchEvent = async () => {
           try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/wine`); 
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/wine/meilleur`); 
             const data = await response.json();
             setWines(data);
             setSelectedWine(data[0]); 
@@ -112,18 +112,20 @@ function MeilleureVente() {
                     <img className="circle" src={wine_circle} alt="fond blanc" />
                 </div>
             </div>
-            <div className="wine-list">
-                {wines.map(wine => (
-                    <div
-                        key={wine.id}
-                        className={`wine-item ${wine === selectedWine ? 'selected' : ''}`}
-                        onClick={() => wine === selectedWine ? null : handleSelectWine(wine)}
-                    >
-                        <img src={wine.imageUrl} alt={wine.wineTitle} />
-                        <h3>{wine.wineTitle}</h3>
-                        <span>{wine.wineDate}</span>
-                    </div>
-                ))}
+            <div className="wine-list-box">
+                <div className="wine-list">
+                    {wines.map(wine => (
+                        <div
+                            key={wine.id}
+                            className={`wine-item ${wine === selectedWine ? 'selected' : ''}`}
+                            onClick={() => wine === selectedWine ? null : handleSelectWine(wine)}
+                        >
+                            <img src={wine.imageUrl} alt={wine.wineTitle} />
+                            <h3>{wine.wineTitle}</h3>
+                            <span>{wine.wineDate}</span>
+                        </div>
+                    ))}
+                </div>
             </div>
         </main>
     );
