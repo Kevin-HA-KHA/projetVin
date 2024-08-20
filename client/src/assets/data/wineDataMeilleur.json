@@ -7,7 +7,10 @@
       "tagVineText": "Pinot noir",
       "tagLocText": "Bourgogne",
       "tagColorText": "Rouge",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/sil-vin-418010.appspot.com/o/product_pinot_noir.png?alt=media&token=b5f3a11c-f4fa-417c-9320-673810872150"
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/sil-vin-418010.appspot.com/o/product_pinot_noir.png?alt=media&token=b5f3a11c-f4fa-417c-9320-673810872150",
+      "meilleur": true,
+      "nouveaute": true,
+      "recompense": true
     },
     {
       "id": 2,
@@ -17,7 +20,10 @@
       "tagVineText": "Pinot Noir",
       "tagLocText": "Beaune",
       "tagColorText": "Rouge",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/sil-vin-418010.appspot.com/o/product_clos_des_mouches.png?alt=media&token=fb7204d4-cf9c-40b8-a3b9-8d6b4b22d790"
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/sil-vin-418010.appspot.com/o/product_clos_des_mouches.png?alt=media&token=fb7204d4-cf9c-40b8-a3b9-8d6b4b22d790",
+      "meilleur": true,
+      "nouveaute": true,
+      "recompense": true
     },
     {
       "id": 3,
@@ -27,7 +33,10 @@
       "tagVineText": "Chardonnay",
       "tagLocText": "Bourgogne",
       "tagColorText": "Blanc",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/sil-vin-418010.appspot.com/o/product_elegance.png?alt=media&token=f5ef072a-f0d1-4f46-bc20-8d49ee7f3429"
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/sil-vin-418010.appspot.com/o/product_elegance.png?alt=media&token=f5ef072a-f0d1-4f46-bc20-8d49ee7f3429",
+      "meilleur": true,
+      "nouveaute": false,
+      "recompense": true
     },
     {
       "id": 4,
@@ -37,7 +46,10 @@
       "tagVineText": "Chardonnay",
       "tagLocText": "Côtes de Gascogne",
       "tagColorText": "Blanc",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/sil-vin-418010.appspot.com/o/product_gascogne.png?alt=media&token=7eee718e-d8c7-4b37-a940-4e2a4ef3b214"
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/sil-vin-418010.appspot.com/o/product_gascogne.png?alt=media&token=7eee718e-d8c7-4b37-a940-4e2a4ef3b214",
+      "meilleur": true,
+      "nouveaute": false,
+      "recompense": false
     }
   ]
   
