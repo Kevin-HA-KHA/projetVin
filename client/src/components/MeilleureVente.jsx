@@ -26,27 +26,42 @@ function MeilleureVente() {
         }
     };
 
+    // useEffect(() => {
+    //     const localURL = '/wineDataMeilleur.json';
+    //     const backupURL = '../src/assets/data/wineDataMeilleur.json';
+        
+        
+    //     fetchWineData(localURL) // Set the initial selected wine to the first one
+    //         .then(data => {
+    //             setWines(data);
+    //             setSelectedWine(data[0]); 
+    //         })
+    //         .catch(() => {
+    //             fetchWineData(backupURL)
+    //                 .then(data => {
+    //                     setWines(data);
+    //                     setSelectedWine(data[0]);
+    //                 })
+    //                 .catch(error => {
+    //                     console.error('Failed to load wine data:', error);
+    //                 });
+    //         });
+    // }, []);
+
     useEffect(() => {
-        const localURL = '/wineDataMeilleur.json';
-        const backupURL = '../src/assets/data/wineDataMeilleur.json';
-        
-        
-        fetchWineData(localURL) // Set the initial selected wine to the first one
-            .then(data => {
-                setWines(data);
-                setSelectedWine(data[0]); 
-            })
-            .catch(() => {
-                fetchWineData(backupURL)
-                    .then(data => {
-                        setWines(data);
-                        setSelectedWine(data[0]);
-                    })
-                    .catch(error => {
-                        console.error('Failed to load wine data:', error);
-                    });
-            });
-    }, []);
+        const fetchEvent = async () => {
+          try {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/wine`); 
+            const data = await response.json();
+            setWines(data);
+            setSelectedWine(data[0]); 
+          } catch (error) {
+            console.error('Error fetching event details:', error);
+          }
+        };
+    
+        fetchEvent();
+      }, []);
 
     const handleSelectWine = (wine) => {
         setTransitionClass('fade-out');
