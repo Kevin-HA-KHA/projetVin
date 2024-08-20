@@ -14,11 +14,13 @@ import {
   signOut,
   errorReset
 } from '../redux/user/userSlice';
+import Calendrier from './Calendrier';
 
 import profilePicture from "../assets/images/profile_picture.png";
 
 
 export default function ProfilePage() {
+    const [button, setButton] = useState('');
     const dispatch = useDispatch();
     const fileRef = useRef(null);
     const [formData, setFormData] = useState({});
@@ -115,26 +117,30 @@ export default function ProfilePage() {
               <img src={profilePicture} alt="image de profil" />
               <div>Administrateur | {currentUser.username}</div>
             </div>
-            <div className="level level-2">
+            {/* <div className="level level-2">
               <a href="#">Mes statistiques</a>
               <a href="#">Gérer mon budget</a>
-            </div>
+            </div> */}
             <div className="level level-3">
-              <a href="#">Mes salons</a>
+              {/* <a href="#">Mes salons</a>
               <a href="#">Mes RDV</a>
-              <a href="#">Mes disponibilités</a>
+              <a href="#">Mes disponibilités</a> */}
+              <a onClick={() => {setButton('calendrier')}} href="#">Mon calendrier</a> 
             </div>
             <div className="level level-4">
-              <a href="#">Gérer mon profil</a>
-              <a href="#">Administrateur</a>
+              <a onClick={() => {setButton('manageProfil')}} href="#">Gérer mon profil</a>
+              {/* <a href="#">Administrateur</a> */}
             </div>
             <div className="level level-5">
-              <a href="#">Gérer mes listes clients</a>
-              <a href="#">Mes listes de diffusion</a>
+              <a onClick={() => {setButton('manageClient')}} href="#">Gérer mes listes clients</a>
+              <a onClick={() => {setButton('manageEmail')}} href="#">Mes listes de diffusion</a>
             </div>
             <Link><button onClick={handleSignOut} className=''>Se déconnecter</button></Link>
           </div>
+          {button === '' && <h2>Bienvenue dans votre espace administrateur</h2>}
+          {button === 'calendrier' && <Calendrier />}
 
+          
 
 
 

@@ -7,6 +7,7 @@
 .profil {
     width: 100vw;
     height: 100vh;
+    display: flex;
 }
 
 .lateralNavbar {
@@ -35,4 +36,9 @@
 
 .level a {
     text-align: center;
+}
+
+/* Taille du calendrier */
+.Calendrier {
+    width: 80%;
 }

@@ -1,0 +1,75 @@
+.gestionClient {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.gestionClient nav {
+    width: 100%;
+    height: 60px;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+.gestionClient nav button {
+    padding: 10px;
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    color: white;
+    border: none;
+    /* border-radius: 5px; */
+    cursor: pointer;
+}
+
+
+/* CLIENT */
+
+.clientAdmin {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.ajoutClientBar {
+    width: 100%;
+    height: 80px;
+    background-color: #E4E4E4;
+    display: flex;
+    align-items: center;
+}
+
+.ajoutClientBar button {
+    padding: 10px;
+    width: 150px;
+    height: 70%;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+/* Modale ajout client */
+
+.modalClient {
+    width: 80%;
+    height: 500px;
+    position: absolute;
+    top: 300%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+}

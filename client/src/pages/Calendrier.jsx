@@ -27,9 +27,9 @@ let styles = {
   `
 };
 
-export default function App() {
+export default function Calendrier() {
   return (
-    <div className="App">
+    <div className="Calendrier">
       <main
         style={{
           width: "90%",

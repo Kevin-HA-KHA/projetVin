@@ -11,6 +11,7 @@ import About from './pages/QuiSommesNous';
 import Produits from './pages/Produits';
 import Rencontrer from './pages/Rencontrer';
 import HeaderAdmin from './components/HeaderAdmin';
+import GestionClient from './pages/GestionClient';
 import { PopupWidget} from 'react-calendly';
 
 
@@ -32,6 +33,7 @@ function AppContent() {
         <Route element={<PrivateRoute/>}>
           <Route path='/profile_page' element={<ProfilePage/>} />
           <Route path='/calendrier' element={<Calendrier/>} />
+          <Route path='/gestion-client' element={<GestionClient/>} />
         </Route>
       </Routes>
       { !isProfilePage && <Footer /> }

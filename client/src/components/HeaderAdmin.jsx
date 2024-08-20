@@ -20,7 +20,7 @@ export default function HeaderAdmin() {
             <Link to='/about'>
               <li>Agenda</li>
             </Link>
-            <Link to='/produits'>
+            <Link to='/gestion-client'>
               <li>Gestion client</li>
             </Link>
             <Link to='/rencontrer'>
