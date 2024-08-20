@@ -1,4 +1,4 @@
-import Client from './models/client.model.js'; 
+import Client from '../models/client.model.js'; 
 import { errorHandler } from '../utils/error.js';
 
 
