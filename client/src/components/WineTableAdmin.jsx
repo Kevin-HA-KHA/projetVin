@@ -15,9 +15,9 @@ function WineTable() {
         tagLocText: '',
         tagColorText: '',
         imageUrl: '',
-        meilleur: false,
-        nouveaute: false,
-        recompense: false
+        MeilleurCategory: false,
+        NouveauteCategory: false,
+        RecompenseCategory: false
     });
 
     useEffect(() => {
@@ -67,9 +67,9 @@ function WineTable() {
                 tagLocText: '',
                 tagColorText: '',
                 imageUrl: '',
-                meilleur: false,
-                nouveaute: false,
-                recompense: false
+                MeilleurCategory: false,
+                NouveauteCategory: false,
+                RecompenseCategory: false
             });
             setShowForm(false);
         } catch (error) {
@@ -123,17 +123,17 @@ function WineTable() {
                     <input id="imageUrl" value={newWine.imageUrl} onChange={handleInputChange} />
                     
                     <label>
-                        <input id="meilleur" type="checkbox" checked={newWine.meilleur} onChange={handleInputChange} />
+                        <input id="MeilleurCategory" type="checkbox" checked={newWine.MeilleurCategory} onChange={handleInputChange} />
                         Meilleur
                     </label>
                     
                     <label>
-                        <input id="nouveaute" type="checkbox" checked={newWine.nouveaute} onChange={handleInputChange} />
+                        <input id="NouveauteCategory" type="checkbox" checked={newWine.NouveauteCategory} onChange={handleInputChange} />
                         Nouveauté
                     </label>
                     
                     <label>
-                        <input id="recompense" type="checkbox" checked={newWine.recompense} onChange={handleInputChange} />
+                        <input id="RecompenseCategory" type="checkbox" checked={newWine.RecompenseCategory} onChange={handleInputChange} />
                         Récompense
                     </label>
 
@@ -151,7 +151,7 @@ function WineTable() {
                         <th>Texte de Localisation</th>
                         <th>Texte de Couleur</th>
                         <th>Image</th>
-                        <th>Meilleur vente</th>
+                        <th>Meilleur</th>
                         <th>Nouveauté</th>
                         <th>Récompense</th>
                         <th>Actions</th>
@@ -168,9 +168,9 @@ function WineTable() {
                             <td>{wine.tagLocText}</td>
                             <td>{wine.tagColorText}</td>
                             <td><img src={wine.imageUrl} alt={wine.wineTitle} width="50" /></td>
-                            <td>{wine.meilleur ? 'Oui' : 'Non'}</td>
-                            <td>{wine.nouveaute ? 'Oui' : 'Non'}</td>
-                            <td>{wine.recompense ? 'Oui' : 'Non'}</td>
+                            <td>{wine.MeilleurCategory ? 'Oui' : 'Non'}</td>
+                            <td>{wine.NouveauteCategory ? 'Oui' : 'Non'}</td>
+                            <td>{wine.RecompenseCategory ? 'Oui' : 'Non'}</td>
                             <td>
                                 <button onClick={() => handleDelete(wine._id)} className="delete-button">X</button>
                             </td>

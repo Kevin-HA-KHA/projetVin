@@ -21,8 +21,9 @@ function AppContent() {
 
   return (
     <>
-      { !isProfilePage && <Header /> }
-      { isProfilePage && <HeaderAdmin /> }
+      <Header />
+      {/* { !isProfilePage && <Header /> }
+      { isProfilePage && <HeaderAdmin /> } */}
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/admin' element={<SignIn/>} />
