@@ -18,8 +18,7 @@ let styles = {
     borderWidth: "3px" // rendre le bord extérieur du calendrier plus épais
   },
 
-  // vous pouvez également utiliser les styles de chaîne d'emotion
-  // (n'oubliez pas d'ajouter la ligne 'import { css } from "@emotion/react";')
+
   today: css`
     /* mettre en évidence aujourd'hui en rendant le texte rouge et en lui donnant une bordure rouge */
     color: red;

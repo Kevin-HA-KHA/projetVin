@@ -46,15 +46,24 @@ function WineTable() {
         }));
     };
 
+    const getNextId = () => {
+        if (wines.length === 0) {
+            return 1; // Si la liste est vide, commencer par 1
+        }
+        const maxId = Math.max(...wines.map(wine => wine.id));
+        return maxId + 1; // Ajouter 1 au plus grand ID existant
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            const newWineWithId = { ...newWine, id: getNextId() };
             const response = await fetch(`${import.meta.env.VITE_API_URL}/api/wine`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(newWine),
+                body: JSON.stringify(newWineWithId),
             });
             const data = await response.json();
             setWines(prevWines => [...prevWines, data]);
@@ -82,11 +91,12 @@ function WineTable() {
             await fetch(`${import.meta.env.VITE_API_URL}/api/wine/${id}`, {
                 method: 'DELETE',
             });
-            setWines(prevWines => prevWines.filter(wine => wine.id !== id));
+            setWines(prevWines => prevWines.filter(wine => wine._id !== id));
         } catch (error) {
             console.error('Erreur lors de la suppression du vin:', error);
         }
     };
+
 
     if (loading) return <p>Chargement des vins...</p>;
     if (error) return <p>Erreur: {error}</p>;
@@ -98,8 +108,8 @@ function WineTable() {
             {showForm && (
                 <form onSubmit={handleSubmit} className="wine-form">
                     <h3>Ajouter un vin</h3>
-                    <label htmlFor="id">Id</label>
-                    <input id="id" value={newWine.id} onChange={handleInputChange} required />
+                    {/* <label htmlFor="id">Id</label>
+                    <input id="id" value={newWine.id} onChange={handleInputChange} required /> */}
 
                     <label htmlFor="wineTitle">Titre du vin</label>
                     <input id="wineTitle" value={newWine.wineTitle} onChange={handleInputChange} required />
@@ -110,13 +120,13 @@ function WineTable() {
                     <label htmlFor="wineDescription">Description</label>
                     <textarea id="wineDescription" value={newWine.wineDescription} onChange={handleInputChange} required />
                     
-                    <label htmlFor="tagVineText">Tag Vigne</label>
+                    <label htmlFor="tagVineText">Cépage</label>
                     <input id="tagVineText" value={newWine.tagVineText} onChange={handleInputChange} required />
                     
-                    <label htmlFor="tagLocText">Tag Localisation</label>
+                    <label htmlFor="tagLocText">Région</label>
                     <input id="tagLocText" value={newWine.tagLocText} onChange={handleInputChange} required />
                     
-                    <label htmlFor="tagColorText">Tag Couleur</label>
+                    <label htmlFor="tagColorText">Couleur</label>
                     <input id="tagColorText" value={newWine.tagColorText} onChange={handleInputChange} required />
                     
                     <label htmlFor="imageUrl">URL de l'image</label>
@@ -147,9 +157,9 @@ function WineTable() {
                         <th>Nom du Vin</th>
                         <th>Date</th>
                         <th>Description</th>
-                        <th>Texte de Cépage</th>
-                        <th>Texte de Localisation</th>
-                        <th>Texte de Couleur</th>
+                        <th>Cépage</th>
+                        <th>Région</th>
+                        <th>Couleur</th>
                         <th>Image</th>
                         <th>Meilleur</th>
                         <th>Nouveauté</th>

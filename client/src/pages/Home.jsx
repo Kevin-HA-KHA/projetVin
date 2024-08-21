@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "../styles/Home.css"
 import banner from "../assets/images/banner.png"
 import logoSalon from "../assets/images/logosalon.png"
-import imgHome from "../assets/images/home2.jpg"
+import imgHome from "../assets/images/home.jpg"
 import bottle from "../assets/images/Bottle.png"
 import map from "../assets/images/map.png"
 import logo from "../assets/images/logo_min.png";

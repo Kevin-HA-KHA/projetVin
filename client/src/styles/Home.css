@@ -33,7 +33,7 @@ body{
     background-image: url('../assets/images/banner.png');
     background-size: cover;
     background-position: center;
-    filter: blur(3px); /* Ajustez la valeur pour obtenir l'effet souhaité */
+    filter: blur(4px); /* Ajustez la valeur pour obtenir l'effet souhaité */
     z-index: -1; /* Place le pseudo-élément derrière le contenu */
   }
 
@@ -160,6 +160,10 @@ body{
 
 .home-container .wine-section {
     background-color: #F1F1F1;
+ }
+
+ .home-container .wine-item:hover{
+    background-color: #fff;
  }
 
  .home-container .loading {
