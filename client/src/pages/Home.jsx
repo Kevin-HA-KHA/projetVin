@@ -77,7 +77,7 @@ export default function Home() {
         {/* <h2>S'il Vin</h2> */}
         <img src={logo} alt="" />
         <p> Découvrez l'univers authentique de notre petit domaine viticole, où chaque bouteille raconte une histoire de passion et de terroir. Nous vous invitons à explorer nos vins uniques et à prendre rendez-vous pour une rencontre personnalisée lors de nos prochains salons. Faites l'expérience d'un savoir-faire artisanal, directement du producteur au consommateur. Profitez de nos événements pour déguster nos meilleures cuvées et discuter de notre engagement pour des vins de qualité. À très bientôt dans un salon près de chez vous !</p>
-        <button className='btnRencontre' onClick={() => {navigate('/produits'); scrollTo(0,0)}}>Rencontrez-nous</button>
+        <button className='btnRencontre' onClick={() => {navigate('/rencontrer'); scrollTo(0,0)}}>Rencontrez-nous</button>
       </div>
      </div>
      <section className='wine-section'>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   signInStart,
@@ -54,7 +54,7 @@ export default function SignIn() {
           <label htmlFor="username">Nom d'utilisateur</label>
           <input
             type='text'
-            placeholder="Administrateur"
+            placeholder="Nom d'utilisateur"
             id='username'
             className=''
             onChange={handleChange}
@@ -62,7 +62,7 @@ export default function SignIn() {
           <label htmlFor="password">Mot de passe</label>
           <input
             type='password'
-            placeholder='mdp'
+            placeholder='Mot de passe'
             id='password'
             className=''
             onChange={handleChange}
