@@ -59,6 +59,7 @@ export const getWineById = async (req, res) => {
 // Ajouter un nouveau vin
 export const createWine = async (req, res) => {
     const wine = new Wine({
+        id: req.body.id,
         wineTitle: req.body.wineTitle,
         wineDate: req.body.wineDate,
         wineDescription: req.body.wineDescription,
