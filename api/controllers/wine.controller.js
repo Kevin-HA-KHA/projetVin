@@ -80,9 +80,10 @@ export const deleteWine = async (req, res) => {
         if (!wine) {
             return res.status(404).json({ message: 'Vin non trouvé' });
         }
-        await wine.remove();
+        await Wine.deleteOne({ _id: req.params.id });
         res.json({ message: 'Vin supprimé' });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
 };
+

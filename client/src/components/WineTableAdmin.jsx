@@ -167,7 +167,7 @@ function WineTable() {
                             <td>{wine.NouveauteCategory ? 'Oui' : 'Non'}</td>
                             <td>{wine.RecompenseCategory ? 'Oui' : 'Non'}</td>
                             <td>
-                                <button onClick={() => handleDelete(wine.id)} className="delete-button">X</button>
+                                <button onClick={() => handleDelete(wine._id)} className="delete-button">X</button>
                             </td>
                         </tr>
                     ))}
