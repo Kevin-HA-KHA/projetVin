@@ -66,9 +66,9 @@ export const createWine = async (req, res) => {
         tagLocText: req.body.tagLocText,
         tagColorText: req.body.tagColorText,
         imageUrl: req.body.imageUrl,
-        MeilleurCategory: req.body.MeilleurCategory,
-        NouveauteCategory: req.body.NouveauteCategory,
-        RecompenseCategory: req.body.RecompenseCategory,
+        meilleur: req.body.meilleur,
+        nouveaute: req.body.nouveaute,
+        recompense: req.body.recompense,
     });
 
     try {
