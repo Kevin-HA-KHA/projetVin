@@ -1,0 +1,88 @@
+.wine-table-container {
+    padding: 40px;
+    width: 90%;
+    overflow-y: scroll;
+    font-family: sans-serif;
+}
+
+.wine-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wine-table th, .wine-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.wine-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.wine-table img {
+    display: block;
+    margin: 0 auto;
+}
+
+.add-wine-button {
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.add-wine-button:hover {
+    background-color: #45a049;
+}
+
+.wine-form {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.wine-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.wine-form input, .wine-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.wine-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.wine-form button:hover {
+    background-color: #45a049;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}

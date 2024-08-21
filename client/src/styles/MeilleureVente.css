@@ -176,6 +176,9 @@ main {
     width: 100%;
     height: 100%;
     overflow-x: scroll;
+    scrollbar-color: #BBB #F1F1F1;
+    scrollbar-width: thin;
+    
   }
 
 

@@ -1,16 +1,23 @@
 import express from 'express';
 import Wine from '../models/wine.model.js';
+import {
+  getAllWines,
+  getWineById,
+  createWine,
+  updateWine,
+  deleteWine
+} from '../controllers/wine.controller.js';
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
-  try {
-    const wine = await Wine.find(); 
-    res.json(wine);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
+
+// Routes pour les vins
+router.get('/', getAllWines);
+router.get('/:id', getWineById);
+router.post('/', createWine);
+router.put('/:id', updateWine);
+router.delete('/:id', deleteWine);
+
 
 router.get('/meilleur', async (req, res) => {
   try {

@@ -15,7 +15,7 @@ import {
   errorReset
 } from '../redux/user/userSlice';
 import Calendrier from './Calendrier';
-
+import WineTable from '../components/WineTableAdmin';
 import profilePicture from "../assets/images/profile_picture.png";
 
 
@@ -118,7 +118,7 @@ export default function ProfilePage() {
               <div>Administrateur | {currentUser.username}</div>
             </div>
             <div className="level level-2">
-              <a href="#">Gérer les vins</a>
+              <a onClick={() => {setButton('manageWines')}} href="#">Gérer les vins</a>
               {/* <a href="#">Mes statistiques</a>
               <a href="#">Gérer mon budget</a> */}
             </div>
@@ -140,6 +140,7 @@ export default function ProfilePage() {
           </div>
           {button === '' && <h2>Bienvenue dans votre espace administrateur</h2>}
           {button === 'calendrier' && <Calendrier />}
+          {button === 'manageWines' && <WineTable />}
 
           
 
