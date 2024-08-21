@@ -2,6 +2,9 @@ import express from 'express';
 import Wine from '../models/wine.model.js';
 import {
   getAllWines,
+  getMeilleur,
+  getNouveaute,
+  getRecompense,
   getWineById,
   createWine,
   updateWine,
@@ -13,6 +16,9 @@ const router = express.Router();
 
 // Routes pour les vins
 router.get('/', getAllWines);
+router.get('/meilleur', getMeilleur);
+router.get('/nouveaute', getNouveaute);
+router.get('/recompense', getRecompense);
 router.get('/:id', getWineById);
 router.post('/', createWine);
 router.put('/:id', updateWine);

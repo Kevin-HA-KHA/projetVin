@@ -10,6 +10,39 @@ export const getAllWines = async (req, res) => {
     }
 };
 
+// Récupérer tous les vins meilleures ventes
+export const getMeilleur = async (req, res) => {
+    try {
+        const wines = await Wine.find({ meilleur: true });
+        res.json(wines);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
+// Récupérer tous les vins recompensés
+export const getRecompense = async (req, res) => {
+    try {
+        const wines = await Wine.find({ recompense: true });
+        res.json(wines);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
+
+// Récupérer tous les vins nouveautés
+export const getNouveaute = async (req, res) => {
+    try {
+        const wines = await Wine.find({ nouveaute: true });
+        res.json(wines);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+};
+
+
+
 // Récupérer un vin par ID
 export const getWineById = async (req, res) => {
     try {
