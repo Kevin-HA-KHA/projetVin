@@ -194,6 +194,16 @@ main {
     transform: translateX(0);
 }
 
+/* transition zoom des vins */
+.image-overlay img {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.image-overlay.fade-in img {
+    opacity: 1;
+}
+
 
 /* Chargement des vins */
 

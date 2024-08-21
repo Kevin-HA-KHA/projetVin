@@ -12,6 +12,26 @@ function Recompense() {
     const [wines, setWines] = useState([]);
     const [selectedWine, setSelectedWine] = useState(null);
     const [transitionClass, setTransitionClass] = useState('');
+    const [zoomedImage, setZoomedImage] = useState(null); 
+    const [overlayClass, setOverlayClass] = useState('');
+
+    useEffect(() => {
+        if (zoomedImage) {
+            setTimeout(() => {
+                setOverlayClass('fade-in');
+            }, 10); 
+        } else {
+            setOverlayClass('');
+        }
+    }, [zoomedImage]);
+
+    const handleImageClick = (imageUrl) => {
+        setZoomedImage(imageUrl); // Set the zoomed image when clicked
+    };
+
+    const closeOverlay = () => {
+        setZoomedImage(null); // Close the overlay when clicked
+    };
 
     // const fetchWineData = async (url) => {
     //     try {
@@ -106,7 +126,12 @@ function Recompense() {
                     </div>
                 </div>
                 <div className="display">
-                    <img src={selectedWine.imageUrl} alt={selectedWine.wineTitle} />
+                    <img 
+                        src={selectedWine.imageUrl} 
+                        alt={selectedWine.wineTitle} 
+                        onClick={() => handleImageClick(selectedWine.imageUrl)} 
+                        style={{ cursor: 'zoom-in' }} 
+                    />
                     <img className="circle" src={wine_circle} alt="fond blanc" />
                 </div>
             </div>
@@ -125,6 +150,38 @@ function Recompense() {
                     ))}
                 </div>
             </div>
+            {/* Overlay for zoomed image */}
+            {zoomedImage && (
+                <div 
+                    className={`image-overlay ${overlayClass}`} 
+                    onClick={closeOverlay}
+                    style={{
+                        position: 'fixed',
+                        top: '0',
+                        left: '0',
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.9)',  
+                        zIndex: '9998',
+                        cursor: 'zoom-out'
+                    }}
+                >
+                    <img 
+                        src={zoomedImage} 
+                        alt="Zoomed wine" 
+                        style={{ 
+                            position: 'fixed', 
+                            top: '50%', 
+                            left: '50%', 
+                            transform: 'translate(-50%, -50%)', 
+                            maxWidth: '80%', 
+                            maxHeight: '80%', 
+                            zIndex: '9999', 
+                            cursor: 'zoom-out' 
+                        }} 
+                    />
+                </div>
+            )}
         </main>
     );
 
