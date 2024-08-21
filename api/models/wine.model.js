@@ -9,9 +9,9 @@ const wineSchema = new mongoose.Schema({
   tagLocText: String,
   tagColorText: String,
   imageUrl: String,
-  MeilleurCategory: Boolean,
-  NouveauteCategory: Boolean,
-  RecompenseCategory: Boolean,
+  meilleur: Boolean,
+  nouveaute: Boolean,
+  recompense: Boolean,
 });
 
 const Wine = mongoose.model('Wine', wineSchema);

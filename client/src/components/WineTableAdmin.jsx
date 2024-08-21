@@ -7,6 +7,7 @@ function WineTable() {
     const [error, setError] = useState(null);
     const [showForm, setShowForm] = useState(false);
     const [newWine, setNewWine] = useState({
+        id: '',
         wineTitle: '',
         wineDate: '',
         wineDescription: '',
@@ -58,6 +59,7 @@ function WineTable() {
             const data = await response.json();
             setWines(prevWines => [...prevWines, data]);
             setNewWine({
+                id: '',
                 wineTitle: '',
                 wineDate: '',
                 wineDescription: '',
@@ -96,6 +98,9 @@ function WineTable() {
             {showForm && (
                 <form onSubmit={handleSubmit} className="wine-form">
                     <h3>Ajouter un vin</h3>
+                    <label htmlFor="id">Id</label>
+                    <input id="id" value={newWine.id} onChange={handleInputChange} required />
+
                     <label htmlFor="wineTitle">Titre du vin</label>
                     <input id="wineTitle" value={newWine.wineTitle} onChange={handleInputChange} required />
                     
@@ -115,7 +120,7 @@ function WineTable() {
                     <input id="tagColorText" value={newWine.tagColorText} onChange={handleInputChange} required />
                     
                     <label htmlFor="imageUrl">URL de l'image</label>
-                    <input id="imageUrl" value={newWine.imageUrl} onChange={handleInputChange} required />
+                    <input id="imageUrl" value={newWine.imageUrl} onChange={handleInputChange} />
                     
                     <label>
                         <input id="MeilleurCategory" type="checkbox" checked={newWine.MeilleurCategory} onChange={handleInputChange} />
@@ -146,9 +151,9 @@ function WineTable() {
                         <th>Texte de Localisation</th>
                         <th>Texte de Couleur</th>
                         <th>Image</th>
-                        <th>Meilleur Catégorie</th>
-                        <th>Nouveauté Catégorie</th>
-                        <th>Récompense Catégorie</th>
+                        <th>Meilleur vente</th>
+                        <th>Nouveauté</th>
+                        <th>Récompense</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
