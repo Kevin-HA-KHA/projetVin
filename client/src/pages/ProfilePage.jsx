@@ -16,6 +16,7 @@ import {
 } from '../redux/user/userSlice';
 import Calendrier from './Calendrier';
 import WineTable from '../components/WineTableAdmin';
+import EventTable from '../components/EventTableAdmin';
 import profilePicture from "../assets/images/profile_picture.png";
 
 
@@ -115,7 +116,7 @@ export default function ProfilePage() {
           <div className="lateralNavbar">
             <div className='level level-1'>
               <img src={profilePicture} alt="image de profil" />
-              <div>Administrateur | {currentUser.username}</div>
+              <div>{currentUser.username} | Administrateur</div>
             </div>
             <div className="level level-2">
               <a onClick={() => {setButton('manageWines')}} href="#">Gérer les vins</a>
@@ -143,6 +144,7 @@ export default function ProfilePage() {
           {button === 'calendrier' && <Calendrier />}
           {/* {button === 'calendrier' && <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FParis&bgcolor=%23ffffff&mode=MONTH&showTz=0&showPrint=0&showCalendars=0&showTitle=0&src=YzQ4ZWZhYzBkZGRiN2IxMjMzZjRmMmNmYjQ3ZjYxYmE4OTEwODI3ZTk5NjZmYTdlYmYwZWNiY2Q1MmUwNzYwN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23C0CA33"  width="900" height="600" frameborder="0"></iframe>} */}
           {button === 'manageWines' && <WineTable />}
+          {button === 'manageEvent' && <EventTable />}
 
           
 

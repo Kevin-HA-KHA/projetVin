@@ -1,0 +1,102 @@
+.event-table-container {
+    padding: 40px;
+    width: 90%;
+    overflow-y: scroll;
+    font-family: sans-serif;
+}
+
+.event-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.event-table tr {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.event-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.event-table td {
+    padding: 8px;
+}
+
+.event-table td:nth-child(2n) {
+    background-color: #F1F1F1;
+}
+
+.event-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.event-table img {
+    display: block;
+    margin: 0 auto;
+}
+
+.add-event-button {
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.add-event-button:hover {
+    background-color: #45a049;
+}
+
+.event-form {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.event-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.event-form input, .event-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.event-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.event-form button:hover {
+    background-color: #45a049;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}

@@ -13,7 +13,8 @@
 .lateralNavbar {
     width: 20%;
     height: 100%;
-    background-color: #333;
+    /* background-color: #333; */
+    background-color: #dddddd;
     color: white;
     display: flex;
     flex-direction: column;
@@ -32,6 +33,12 @@
     /* margin-top: 20px; */
     padding: 30px 0;
     border-bottom: 1px solid #f1f1f1;
+}
+
+.level-1 > div {
+    color: #510000;
+    font-family: "Quasimoda W03 ExtraBold";
+    text-transform: capitalize;
 }
 
 .level a {
