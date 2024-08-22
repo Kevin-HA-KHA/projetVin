@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles/EventTableAdmin.css';
 
 function EventTable() {
-    const [event, setEvent] = useState(null);
+    const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [showForm, setShowForm] = useState(false);
@@ -17,21 +17,21 @@ function EventTable() {
     });
 
     useEffect(() => {
-        const fetchEvent = async () => {
+        const fetchEvents = async () => {
             try {
                 const response = await fetch(`${import.meta.env.VITE_API_URL}/api/event`);
                 if (!response.ok) {
-                    throw new Error('Erreur lors de la récupération de l\'événement');
+                    throw new Error('Erreur lors de la récupération des événements');
                 }
                 const data = await response.json();
-                setEvent(data);
+                setEvents(data);
             } catch (error) {
                 setError(error.message);
             } finally {
                 setLoading(false);
             }
         };
-        fetchEvent();
+        fetchEvents();
     }, []);
 
     const handleInputChange = (e) => {
@@ -53,7 +53,7 @@ function EventTable() {
                 body: JSON.stringify(newEvent),
             });
             const data = await response.json();
-            setEvent(data);
+            setEvents(prevEvents => [...prevEvents, data]);
             setNewEvent({
                 startDate: '',
                 endDate: '',
@@ -69,23 +69,23 @@ function EventTable() {
         }
     };
 
-    const handleDelete = async () => {
+    const handleDelete = async (id) => {
         try {
-            await fetch(`${import.meta.env.VITE_API_URL}/api/event/${event._id}`, {
+            await fetch(`${import.meta.env.VITE_API_URL}/api/event/${id}`, {
                 method: 'DELETE',
             });
-            setEvent(null);
+            setEvents(prevEvents => prevEvents.filter(event => event._id !== id));
         } catch (error) {
             console.error('Erreur lors de la suppression de l\'événement:', error);
         }
     };
 
-    if (loading) return <p>Chargement de l'événement...</p>;
+    if (loading) return <p>Chargement des événements...</p>;
     if (error) return <p>Erreur: {error}</p>;
 
     return (
         <div className="event-table-container">
-            <h2>Gestion de l'événement</h2>
+            <h2>Gestion des événements</h2>
             <button className="add-event-button" onClick={() => setShowForm(!showForm)}>Ajouter un événement</button>
             {showForm && (
                 <form onSubmit={handleSubmit} className="event-form">
@@ -116,42 +116,42 @@ function EventTable() {
                 </form>
             )}
 
-            {event ? (
-                <table className="event-table">
-                    <thead>
+            <table className="event-table">
+                <thead>
+                    <tr>
+                        <th>Nom de l'événement</th>
+                        <th>Date de début</th>
+                        <th>Date de fin</th>
+                        <th>Lieu</th>
+                        <th>Description</th>
+                        <th>Plus d'infos</th>
+                        <th>Logo</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {events.length > 0 ? (
+                        events.map((event) => (
+                            <tr key={event._id}>
+                                <td>{event.eventName}</td>
+                                <td>{event.startDate}</td>
+                                <td>{event.endDate}</td>
+                                <td>{event.location}</td>
+                                <td>{event.description}</td>
+                                <td>{event.moreInfoLink}</td>
+                                <td><img src={event.logoUrl} alt={event.eventName} width="50" /></td>
+                                <td>
+                                    <button onClick={() => handleDelete(event._id)} className="delete-button">Supprimer</button>
+                                </td>
+                            </tr>
+                        ))
+                    ) : (
                         <tr>
-                            <th>Nom de l'événement</th>
-                            <th>Date de début</th>
-                            <th>Date de fin</th>
-                            <th>Lieu</th>
-                            <th>Description</th>
-                            <th>Plus d'infos</th>
-                            <th>Logo</th>
-                            <th>Actions</th>
+                            <td colSpan="8">Aucun événement disponible.</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr key={event._id}>
-                            <td>{event.eventName}</td>
-                            <td>{event.startDate}</td>
-                            <td>{event.endDate}</td>
-                            <td>{event.location}</td>
-                            <td>{event.description}</td>
-                            <td>
-                                <a href={event.moreInfoLink} target="_blank" rel="noopener noreferrer">
-                                    Plus d'infos
-                                </a>
-                            </td>
-                            <td><img src={event.logoUrl} alt={event.eventName} width="50" /></td>
-                            <td>
-                                <button onClick={handleDelete} className="delete-button">Supprimer</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            ) : (
-                <p>Aucun événement disponible.</p>
-            )}
+                    )}
+                </tbody>
+            </table>
         </div>
     );
 }

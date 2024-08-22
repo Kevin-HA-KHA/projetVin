@@ -5,7 +5,7 @@ import Event from '../models/event.model.js';
 // Récupérer tous les événements
 export const getAllEvents = async (req, res) => {
     try {
-        const events = await Event.find();
+        const events = await Event.findOne();
         res.json(events);
     } catch (err) {
         res.status(500).json({ message: err.message });
