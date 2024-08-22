@@ -73,6 +73,19 @@
     box-sizing: border-box;
 }
 
+.client-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+
 .client-form button {
     background-color: #4CAF50;
     color: white;
