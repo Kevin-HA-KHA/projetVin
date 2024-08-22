@@ -35,7 +35,7 @@ export default function Home() {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/event`); // L'URL correcte
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/event/one`); // L'URL correcte
         const data = await response.json();
         setEvent(data);
       } catch (error) {

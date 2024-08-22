@@ -4,13 +4,17 @@ import {
     getEventById,
     createEvent,
     updateEvent,
-    deleteEvent
+    deleteEvent,
+    getOneEvents
 } from '../controllers/event.controller.js';
 
 const router = express.Router();
 
 // Route pour récupérer tous les événements
 router.get('/', getAllEvents);
+
+// Route pour récupérer tous les événements
+router.get('/one', getOneEvents);
 
 // Route pour récupérer un événement par ID
 router.get('/:id', getEventById);
