@@ -119,8 +119,8 @@ function ClientTable() {
                     
                     <label htmlFor="clientStatus">Statut</label>
                     <select id="clientStatus" value={newClient.clientStatus} onChange={handleInputChange} required>
-                        <option value="particulier">Particulier</option>
-                        <option value="professionnel">Professionnel</option>
+                        <option value="Particulier">Particulier</option>
+                        <option value="Professionnel">Professionnel</option>
                     </select>
 
                     <button type="submit">Ajouter</button>
