@@ -101,10 +101,10 @@ function EventTable() {
                     <input id="endDate" value={newEvent.endDate} onChange={handleInputChange} required />
 
                     <label htmlFor="location">Lieu</label>
-                    <input id="location" value={newEvent.location} onChange={handleInputChange} required />
+                    <input id="location" value={newEvent.location} onChange={handleInputChange} />
 
                     <label htmlFor="description">Description</label>
-                    <textarea id="description" value={newEvent.description} onChange={handleInputChange} required />
+                    <textarea id="description" value={newEvent.description} onChange={handleInputChange} />
 
                     <label htmlFor="moreInfoLink">Lien pour plus d'infos</label>
                     <input id="moreInfoLink" value={newEvent.moreInfoLink} onChange={handleInputChange} />

@@ -17,6 +17,7 @@ import {
 import Calendrier from './Calendrier';
 import WineTable from '../components/WineTableAdmin';
 import EventTable from '../components/EventTableAdmin';
+import ClientTable from '../components/ClientTableAdmin';
 import profilePicture from "../assets/images/profile_picture.png";
 
 
@@ -119,24 +120,19 @@ export default function ProfilePage() {
               <div>{currentUser.username} | Administrateur</div>
             </div>
             <div className="level level-2">
-              <a onClick={() => {setButton('manageWines')}} href="#">Gérer les vins</a>
-              <a onClick={() => {setButton('manageEvent')}} href="#">Gérer l'événement</a>
-              {/* <a href="#">Mes statistiques</a>
-              <a href="#">Gérer mon budget</a> */}
-            </div>
-            <div className="level level-3">
-              {/* <a href="#">Mes salons</a>
-              <a href="#">Mes RDV</a>
-              <a href="#">Mes disponibilités</a> */}
               <a onClick={() => {setButton('calendrier')}} href="#">Mon calendrier</a> 
             </div>
+            <div className="level level-3">
+              <a onClick={() => {setButton('manageEvent')}} href="#">Gérer les événements</a>
+              <a onClick={() => {setButton('manageWines')}} href="#">Gérer les vins</a>
+            </div>
             <div className="level level-4">
-              <a onClick={() => {setButton('manageProfil')}} href="#">Gérer mon profil</a>
+              <a onClick={() => {setButton('manageClient')}} href="#">Gérer mes listes clients</a>
+              <a onClick={() => {setButton('manageEmail')}} href="#">Mes listes de diffusion</a>
               {/* <a href="#">Administrateur</a> */}
             </div>
             <div className="level level-5">
-              <a onClick={() => {setButton('manageClient')}} href="#">Gérer mes listes clients</a>
-              <a onClick={() => {setButton('manageEmail')}} href="#">Mes listes de diffusion</a>
+              <a onClick={() => {setButton('manageProfil')}} href="#">Gérer mon profil</a>
             </div>
             <Link><button onClick={handleSignOut} className=''>Se déconnecter</button></Link>
           </div>
@@ -145,6 +141,7 @@ export default function ProfilePage() {
           {/* {button === 'calendrier' && <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FParis&bgcolor=%23ffffff&mode=MONTH&showTz=0&showPrint=0&showCalendars=0&showTitle=0&src=YzQ4ZWZhYzBkZGRiN2IxMjMzZjRmMmNmYjQ3ZjYxYmE4OTEwODI3ZTk5NjZmYTdlYmYwZWNiY2Q1MmUwNzYwN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23C0CA33"  width="900" height="600" frameborder="0"></iframe>} */}
           {button === 'manageWines' && <WineTable />}
           {button === 'manageEvent' && <EventTable />}
+          {button === 'manageClient' && <ClientTable />}
 
           
 
