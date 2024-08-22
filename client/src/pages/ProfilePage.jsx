@@ -119,6 +119,7 @@ export default function ProfilePage() {
             </div>
             <div className="level level-2">
               <a onClick={() => {setButton('manageWines')}} href="#">Gérer les vins</a>
+              <a onClick={() => {setButton('manageEvent')}} href="#">Gérer l'événement</a>
               {/* <a href="#">Mes statistiques</a>
               <a href="#">Gérer mon budget</a> */}
             </div>

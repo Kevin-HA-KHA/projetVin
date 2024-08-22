@@ -16,7 +16,7 @@
 .produit-hero {
     width: 100%;
     height: 400px;
-    background-image: url(../assets/images/produit_hero.png);
+    background-image: url(../assets/images/produit_hero.jpg);
     background-size: cover;
     background-position-y: 20%;
     position: relative;

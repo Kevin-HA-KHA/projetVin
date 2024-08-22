@@ -10,9 +10,23 @@
     border-collapse: collapse;
 }
 
-.wine-table th, .wine-table td {
+.wine-table tr {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.wine-table th {
     border: 1px solid #ddd;
     padding: 8px;
+}
+
+.wine-table td {
+    padding: 8px;
+}
+
+.wine-table td:nth-child(2n) {
+    background-color: #F1F1F1;
 }
 
 .wine-table th {

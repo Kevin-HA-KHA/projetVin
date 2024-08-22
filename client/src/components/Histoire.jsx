@@ -1,5 +1,5 @@
 import React from 'react';
-import imgDomaine from "../assets/images/domaine.png"; 
+import imgDomaine from "../assets/images/domaine.jpg"; 
 import img1876 from "../assets/images/1876.png"; 
 import txt2 from "../assets/images/txt2.png"; 
 import passion from "../assets/images/passion.png"; 

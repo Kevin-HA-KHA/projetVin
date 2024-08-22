@@ -1,6 +1,6 @@
 import React from 'react';
 
-import imgPinot from "../assets/images/pinot.png"
+import imgPinot from "../assets/images/pinot.jpg"
 import "../styles/Domaine.css"
 
 import "../styles/Valeurs.css"

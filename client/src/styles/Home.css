@@ -216,9 +216,10 @@ body{
 
 
  .home-container .sectionMap iframe {
-    padding: 30px 6%;
+    padding: 30px 8%;
     border: none;
     border-radius: 10px;
+    margin-bottom: 40px;
  }
 
 
