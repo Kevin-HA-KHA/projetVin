@@ -16,8 +16,8 @@
 }
 
 .singup {
-    width: 40%;
-    height: 50%;
+    width: 80%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,6 +41,8 @@
 
 .singup-block input {
     margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 10px;
 }
 
 .singup-link {

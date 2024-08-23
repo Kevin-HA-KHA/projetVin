@@ -3,7 +3,9 @@
 
 Une plateforme de gestion professionelle. Réalisé avec la stack MERN 🧑‍💻.
 
+## Démo live ✅
 
+Le site est déployé et disponible à l'URL suivante : **https://sil-vin.mastercmw.com** 
 
 ## Installation
 
@@ -45,3 +47,6 @@ Pour lancer le projet en local, lancer à la racine du projet :
 
 **Base de données:** MongoDB
 
+**Stockage d'image:** Firebase Storage
+
+**Gestion de l'authentification:** JSON Web Token (JWT)
