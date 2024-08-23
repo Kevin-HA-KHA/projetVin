@@ -18,11 +18,12 @@ import Calendrier from './Calendrier';
 import WineTable from '../components/WineTableAdmin';
 import EventTable from '../components/EventTableAdmin';
 import ClientTable from '../components/ClientTableAdmin';
+import AccountManagement from '../components/AccountManagementAdmin';
 import profilePicture from "../assets/images/profile_picture.png";
 
 
 export default function ProfilePage() {
-    const [button, setButton] = useState('');
+    const [button, setButton] = useState('calendrier');
     const dispatch = useDispatch();
     const fileRef = useRef(null);
     const [formData, setFormData] = useState({});
@@ -127,7 +128,7 @@ export default function ProfilePage() {
               <a onClick={() => {setButton('manageWines')}} href="#">Gérer les vins</a>
             </div>
             <div className="level level-4">
-              <a onClick={() => {setButton('manageClient')}} href="#">Gérer mes listes clients</a>
+              <a onClick={() => {setButton('manageClient')}} href="#">Gérer mes clients</a>
               {/* <a onClick={() => {setButton('manageEmail')}} href="#">Mes listes de diffusion</a> */}
               {/* <a href="#">Administrateur</a> */}
             </div>
@@ -142,6 +143,7 @@ export default function ProfilePage() {
           {button === 'manageWines' && <WineTable />}
           {button === 'manageEvent' && <EventTable />}
           {button === 'manageClient' && <ClientTable />}
+          {button === 'manageProfil' && <AccountManagement />}
 
           
 

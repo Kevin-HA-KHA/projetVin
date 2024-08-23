@@ -17,7 +17,8 @@
 
 .about-description { 
     width: 100%;
-    height: 150px;
+    min-height: 150px;
+    padding: 20px 0;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -94,5 +95,203 @@
     transform: translateX(100%);
     transition: transform 600ms;
   }
+
+  @media (max-width: 550px) {
+    .passion {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .famille {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .imgFamille {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .passion img, .imgFamille img {
+      width: 80%;
+    }
+  }
+
+  @media (max-width: 750px) {
+
+    .histoire .leftSide img {
+      display: none;
+    }
+
+  }
   
-  
+  @media (max-width: 1000px) {
+
+    /* ADAPATION MENU DES CATEGORIES */
+    .about-buttons {
+        height: initial !important;
+        flex-direction: column;
+    }
+
+    .about-buttons button {
+        width: 100%;
+    }
+
+    /* HISTOIRE */
+    .histoire {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .leftSide {
+      width: 100% !important;
+    }
+
+    .leftSide img {
+      width: initial !important;
+    }
+
+    .rightSide {
+      width: 100% !important;
+    }
+
+    /* REGION */
+    .region3, .region4, .region5 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .region3 > *, .region4 > *, .region5 > * {
+      width: 100% !important;
+      margin: 0 !important;
+    }
+
+    .region6 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+}
+
+@media (max-width: 1350px) {
+    /* VALEUR */
+    .valeurs {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .imgValeurs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .imgValeurs img{
+      max-width: 80%;
+    }
+
+    .txtValeurs {
+      width: 80% !important;
+    }
+
+    .valeurs .harmonie {
+      margin: 0 !important;
+    }
+
+    .valeurs .harmonie:not(:last-of-type) {
+      width: 80%;
+    }
+
+    .valeurs .leftSide {
+      width: 100% !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .valeurs .Valeurs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .valeurs .rightSide {
+      width: 100% !important;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .valeurs .rightSide img {
+      max-width: 50%;
+    }
+
+    .valeurs .rightSide .environnement {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .valeurs .rightSide .env {
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+    }
+
+    .valeurs .rightSide .txtEnv, .valeurs .rightSide .txtDurabilite {
+      width: 80% !important;
+    }
+
+    .valeurs .rightSide .durabilite {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+
+    /* DOMAINE */
+
+    .domaine-main {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .domaine-main img {
+      max-width: 80%;
+    }
+
+
+    
+    /* REGION */
+
+    .region {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .region img {
+      max-width: 80%;
+    }
+
+    .regionLeft {
+      width: 80% !important;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .regionRight {
+      width: 80% !important;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+}

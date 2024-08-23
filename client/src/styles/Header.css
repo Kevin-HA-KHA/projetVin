@@ -56,3 +56,180 @@ a{
     font-family: "Quasimoda W03 ExtraBold";
 }
 
+/* Burger */
+
+.regular-menu {
+    display: flex;
+    width: 100%;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+/* GENERAL STYLES */
+.visuallyHidden {
+    position: absolute; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height: 1px; width: 1px; 
+    margin: -1px; padding: 0; border: 0; 
+}
+
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hamburger {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.hamburger .bar {
+    padding: 0;
+    width: 30px;
+    height: 4px;
+    background-color: maroon;
+    display: block;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+    position: absolute; 
+}
+
+.bar1 {
+    top: 0;
+}
+
+.bar2,
+.bar3 {
+    top: 13.5px;
+}
+
+.bar3 {
+    right: 0;
+}
+
+.bar4 {
+    bottom: 0;
+}
+
+/* HAMBURGER 3 */
+
+.hamburger3 .bar1 {
+    transform-origin: 5%;
+}
+
+.hamburger3 .bar4 {
+    transform-origin: 5%;
+}
+
+.checkbox3:checked + label > .hamburger3 > .bar1{
+    transform: rotate(45deg);
+    height: 3px;
+    width: 42px;
+}
+
+.checkbox3:checked + label > .hamburger3 > .bar3{
+    transform: rotate(45deg);
+    height: 3px;
+    background-color: transparent;
+}
+
+.checkbox3:checked + label > .hamburger3 > .bar2{
+    transform: rotate(-45deg);
+    height: 3px;
+    background-color: transparent;
+}
+
+.checkbox3:checked + label > .hamburger3 > .bar4{
+    transform: rotate(-45deg);
+    height: 3px;
+    width: 42px;
+}
+
+
+.burger-menu-open {
+    position: absolute;
+    width: 50%;
+    height: 500px;
+    background-color: red;
+    z-index: 100;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-slide-menu {
+    display: none;
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.open {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+
+    .invisible {
+        display: none;
+    }
+
+    .fixed {
+        position: fixed;
+    }
+    
+    .nav-right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 50px;
+    }
+
+    .regular-menu {
+        display: none;
+    }
+    
+    .mobile-menu {
+        display: block;
+        z-index: 101;
+    }
+
+    .hamburger {
+        margin-top: 0;
+    }
+
+    .open {
+        display: block;
+    }
+
+    .mobile-slide-menu-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        z-index: 101;
+        background-color: #F1F1F1;
+    }
+
+    .mobile-slide-menu-box a:hover{
+        background-color: #F3F3F3;
+    }
+    
+    .mobile-slide-menu-box Link {
+        border-bottom: 1px solid #510000;
+    }
+}

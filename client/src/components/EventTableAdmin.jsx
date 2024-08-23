@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { storage } from '../../firebaseConfig';  // Assurez-vous que ce chemin est correct
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import '../styles/EventTableAdmin.css';
 
 function EventTable() {
@@ -13,7 +15,8 @@ function EventTable() {
         location: '',
         description: '',
         moreInfoLink: '',
-        logoUrl: '',
+        logoFile: null,  // Changement ici
+        logoUrl: '',  // URL de l'image après upload
     });
 
     useEffect(() => {
@@ -35,33 +38,50 @@ function EventTable() {
     }, []);
 
     const handleInputChange = (e) => {
-        const { id, value } = e.target;
+        const { id, value, type, files } = e.target;
         setNewEvent(prevState => ({
             ...prevState,
-            [id]: value
+            [id]: type === 'file' ? files[0] : value  // Traitement des fichiers ici
         }));
     };
 
-    const formatUrl = (url) => {
-        if (!url.startsWith('http://') && !url.startsWith('https://')) {
-            return `https://${url}`;
+    const handleImageUpload = async (file) => {
+        if (file) {
+            const storageRef = ref(storage, `event-logos/${file.name}`);
+            try {
+                await uploadBytes(storageRef, file);
+                const downloadURL = await getDownloadURL(storageRef);
+                return downloadURL;
+            } catch (error) {
+                console.error('Erreur lors de l\'upload de l\'image:', error);
+                return '';
+            }
         }
-        return url;
+        return '';
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+    
+        // Ajouter https:// si nécessaire
+        let correctedLink = newEvent.moreInfoLink;
+        if (!/^https?:\/\//i.test(correctedLink)) {
+            correctedLink = `https://${correctedLink}`;
+        }
+    
         try {
-            const formattedEvent = {
-                ...newEvent,
-                moreInfoLink: formatUrl(newEvent.moreInfoLink),
+            const logoUrl = await handleImageUpload(newEvent.logoFile);
+            const eventToSave = { 
+                ...newEvent, 
+                moreInfoLink: correctedLink,  // Utiliser le lien corrigé
+                logoUrl 
             };
             const response = await fetch(`${import.meta.env.VITE_API_URL}/api/event`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formattedEvent),
+                body: JSON.stringify(eventToSave),
             });
             const data = await response.json();
             setEvents(prevEvents => [...prevEvents, data]);
@@ -72,6 +92,7 @@ function EventTable() {
                 location: '',
                 description: '',
                 moreInfoLink: '',
+                logoFile: null,
                 logoUrl: '',
             });
             setShowForm(false);
@@ -79,6 +100,7 @@ function EventTable() {
             console.error('Erreur lors de l\'ajout de l\'événement:', error);
         }
     };
+    
 
     const handleDelete = async (id) => {
         try {
@@ -106,10 +128,10 @@ function EventTable() {
                     <input id="eventName" value={newEvent.eventName} onChange={handleInputChange} required />
 
                     <label htmlFor="startDate">Date de début</label>
-                    <input id="startDate" value={newEvent.startDate} onChange={handleInputChange} required />
+                    <input id="startDate" type="date" value={newEvent.startDate} onChange={handleInputChange} required />
 
                     <label htmlFor="endDate">Date de fin</label>
-                    <input id="endDate" value={newEvent.endDate} onChange={handleInputChange} required />
+                    <input id="endDate" type="date" value={newEvent.endDate} onChange={handleInputChange} required />
 
                     <label htmlFor="location">Lieu</label>
                     <input id="location" value={newEvent.location} onChange={handleInputChange} />
@@ -120,8 +142,8 @@ function EventTable() {
                     <label htmlFor="moreInfoLink">Lien pour plus d'infos</label>
                     <input id="moreInfoLink" value={newEvent.moreInfoLink} onChange={handleInputChange} />
 
-                    <label htmlFor="logoUrl">URL du logo</label>
-                    <input id="logoUrl" value={newEvent.logoUrl} onChange={handleInputChange} />
+                    <label htmlFor="logoFile">Logo</label>
+                    <input id="logoFile" type="file" onChange={handleInputChange} accept="image/png, image/jpeg? image/webp" />
 
                     <button type="submit">Ajouter</button>
                 </form>
@@ -149,11 +171,7 @@ function EventTable() {
                                 <td>{event.endDate}</td>
                                 <td>{event.location}</td>
                                 <td>{event.description}</td>
-                                <td>
-                                    <a className='savoirPlusSalon' href={formatUrl(event.moreInfoLink)} target='_blank' rel='noopener noreferrer'>
-                                        En savoir plus sur le salon
-                                    </a>
-                                </td>
+                                <td>{event.moreInfoLink}</td>
                                 <td><img src={event.logoUrl} alt={event.eventName} width="50" /></td>
                                 <td>
                                     <button onClick={() => handleDelete(event._id)} className="delete-button">Supprimer</button>

@@ -16,7 +16,10 @@ body{
     align-items: center;
     justify-content: space-evenly;
     position: relative;
-    height: 150px;
+    /* height: 150px; */
+    height: fit-content;
+    min-height: 150px;
+    padding: 20px 0;
     width: 100%;
     color: white;
     overflow: hidden; 
@@ -40,6 +43,7 @@ body{
   .txtRdv {
     position: relative;
     z-index: 1; /* Assure que le texte est au-dessus de l'image de fond floue */
+    gap: 10px;
   }
 
 .txtRdv{
@@ -93,7 +97,8 @@ body{
 
 .rencontrezNous{
     width: 100%;
-    height: 160px;
+    min-height: 160px;
+    padding: 30px 0;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -227,3 +232,38 @@ body{
     height: 600px;
     width: 50%;
 }
+
+@media (max-width: 400px) {
+    .rencontrezNous > p {
+        display: none !important;
+    }
+}
+
+
+@media (max-width: 1000px) {
+
+    .banner {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .txtRdv {
+        gap: 10px;
+    }
+
+    .txtRdv h2{
+        font-size: 1.2rem;
+    }
+
+    .txtRdv p{
+        font-size: 0.9rem;
+    }
+
+    .rencontrezNous {
+        flex-direction: column;
+        max-height: 100%;
+        gap: 20px;
+        padding: 20px 0;
+    }
+}
+
