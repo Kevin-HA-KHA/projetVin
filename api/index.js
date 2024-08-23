@@ -27,7 +27,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: '*',
+  origin: 'https://sil-vin.mastercmw.com', // TIP : je voulais mettre origin: '*' mais en prod, les requetes nécessitant les cookies de credentials ne fonctionneront pas car les navigateurs n'acceptent pas les cookies si l'origine est * par sécurité
   credentials: true,
 }));
 
