@@ -11,9 +11,9 @@ export const test = (req, res) => {
 // update user
 
 export const updateUser = async (req, res, next) => {
-  if (req.user.id !== req.params.id) {
-    return next(errorHandler(401, 'Vous ne pouvez modifier que votre compte!'));
-  }
+  // if (req.user.id !== req.params.id) {
+  //   return next(errorHandler(401, 'Vous ne pouvez modifier que votre compte!'));
+  // }
   try {
     if (req.body.password) {
       req.body.password = bcryptjs.hashSync(req.body.password, 10);
@@ -40,9 +40,9 @@ export const updateUser = async (req, res, next) => {
 // delete user
 
 export const deleteUser = async (req, res, next) => {
-  if (req.user.id !== req.params.id) {
-    return next(errorHandler(401, 'Vous ne pouvez effacer que votre compte!'));
-  }
+  // if (req.user.id !== req.params.id) {
+  //   return next(errorHandler(401, 'Vous ne pouvez effacer que votre compte!'));
+  // }
   try {
     await User.findByIdAndDelete(req.params.id);
     res.status(200).json('L\'utilisateur a été effacé...');
