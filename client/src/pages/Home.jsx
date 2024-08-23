@@ -57,7 +57,7 @@ export default function Home() {
           <div className='txtRdv'>
             <h2>Retrouvez nous du <span>{event.startDate}</span> au <span>{event.endDate}</span> au <span>{event.eventName}</span>, {event.location}</h2>
             <p>{event.description}</p>
-            <a className='savoirPlusSalon' href={event.moreInfoLink} target='_blank'>En savoir plus sur le salon</a>
+            <a className='savoirPlusSalon' href={event.moreInfoLink} target='_blank' rel='noopener noreferrer'>En savoir plus sur le salon</a>
           </div>
           <img className='logoSalon' src={event.logoUrl} alt="Logo Salon" />
         </div>

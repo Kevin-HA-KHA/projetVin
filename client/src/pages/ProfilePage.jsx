@@ -128,7 +128,7 @@ export default function ProfilePage() {
             </div>
             <div className="level level-4">
               <a onClick={() => {setButton('manageClient')}} href="#">Gérer mes listes clients</a>
-              <a onClick={() => {setButton('manageEmail')}} href="#">Mes listes de diffusion</a>
+              {/* <a onClick={() => {setButton('manageEmail')}} href="#">Mes listes de diffusion</a> */}
               {/* <a href="#">Administrateur</a> */}
             </div>
             <div className="level level-5">

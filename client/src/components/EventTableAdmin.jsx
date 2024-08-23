@@ -42,15 +42,26 @@ function EventTable() {
         }));
     };
 
+    const formatUrl = (url) => {
+        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+            return `https://${url}`;
+        }
+        return url;
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            const formattedEvent = {
+                ...newEvent,
+                moreInfoLink: formatUrl(newEvent.moreInfoLink),
+            };
             const response = await fetch(`${import.meta.env.VITE_API_URL}/api/event`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(newEvent),
+                body: JSON.stringify(formattedEvent),
             });
             const data = await response.json();
             setEvents(prevEvents => [...prevEvents, data]);
@@ -138,7 +149,11 @@ function EventTable() {
                                 <td>{event.endDate}</td>
                                 <td>{event.location}</td>
                                 <td>{event.description}</td>
-                                <td>{event.moreInfoLink}</td>
+                                <td>
+                                    <a className='savoirPlusSalon' href={formatUrl(event.moreInfoLink)} target='_blank' rel='noopener noreferrer'>
+                                        En savoir plus sur le salon
+                                    </a>
+                                </td>
                                 <td><img src={event.logoUrl} alt={event.eventName} width="50" /></td>
                                 <td>
                                     <button onClick={() => handleDelete(event._id)} className="delete-button">Supprimer</button>

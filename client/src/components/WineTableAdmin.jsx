@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { storage } from '../../firebaseConfig';
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import '../styles/WineTableAdmin.css';
 
 function WineTable() {
@@ -6,6 +8,7 @@ function WineTable() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [showForm, setShowForm] = useState(false);
+    const [imageFile, setImageFile] = useState(null);
     const [newWine, setNewWine] = useState({
         id: '',
         wineTitle: '',
@@ -46,18 +49,31 @@ function WineTable() {
         }));
     };
 
+    const handleFileChange = (e) => {
+        setImageFile(e.target.files[0]);
+    };
+
     const getNextId = () => {
         if (wines.length === 0) {
-            return 1; // Si la liste est vide, commencer par 1
+            return 1; 
         }
         const maxId = Math.max(...wines.map(wine => wine.id));
-        return maxId + 1; // Ajouter 1 au plus grand ID existant
+        return maxId + 1;
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
+        let imageUrl = '';
+
+        if (imageFile) {
+            const imageRef = ref(storage, `wines/${imageFile.name}`);
+            await uploadBytes(imageRef, imageFile);
+            imageUrl = await getDownloadURL(imageRef);
+        }
+
         try {
-            const newWineWithId = { ...newWine, id: getNextId() };
+            const newWineWithId = { ...newWine, id: getNextId(), imageUrl };
             const response = await fetch(`${import.meta.env.VITE_API_URL}/api/wine`, {
                 method: 'POST',
                 headers: {
@@ -80,6 +96,7 @@ function WineTable() {
                 nouveaute: false,
                 recompense: false
             });
+            setImageFile(null);
             setShowForm(false);
         } catch (error) {
             console.error('Erreur lors de l\'ajout du vin:', error);
@@ -97,7 +114,6 @@ function WineTable() {
         }
     };
 
-
     if (loading) return <p>Chargement des vins...</p>;
     if (error) return <p>Erreur: {error}</p>;
 
@@ -108,8 +124,6 @@ function WineTable() {
             {showForm && (
                 <form onSubmit={handleSubmit} className="wine-form">
                     <h3>Ajouter un vin</h3>
-                    {/* <label htmlFor="id">Id</label>
-                    <input id="id" value={newWine.id} onChange={handleInputChange} required /> */}
 
                     <label htmlFor="wineTitle">Titre du vin</label>
                     <input id="wineTitle" value={newWine.wineTitle} onChange={handleInputChange} required />
@@ -129,8 +143,8 @@ function WineTable() {
                     <label htmlFor="tagColorText">Couleur</label>
                     <input id="tagColorText" value={newWine.tagColorText} onChange={handleInputChange} required />
                     
-                    <label htmlFor="imageUrl">URL de l'image</label>
-                    <input id="imageUrl" value={newWine.imageUrl} onChange={handleInputChange} />
+                    <label htmlFor="imageUrl">Image du vin</label>
+                    <input id="imageFile" type="file" accept="image/png" onChange={handleFileChange} />
                     
                     <label>
                         <input id="meilleur" type="checkbox" checked={newWine.meilleur} onChange={handleInputChange} />
