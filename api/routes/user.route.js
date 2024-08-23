@@ -11,7 +11,9 @@ const router = express.Router();
 
 router.get('/', test);
 // router.get('/:id', getUserDataById);
-router.patch('/update/:id', verifyToken, updateUser);
-router.delete('/delete/:id', verifyToken, deleteUser);
+// router.patch('/update/:id', verifyToken, updateUser);  // not working on deployed server
+// router.delete('/delete/:id', verifyToken, deleteUser); // not working on deployed server
+router.patch('/update/:id', updateUser);
+router.delete('/delete/:id', deleteUser);
 
 export default router;
