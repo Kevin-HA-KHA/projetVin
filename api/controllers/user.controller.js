@@ -16,7 +16,7 @@ export const updateUser = async (req, res, next) => {
   }
   try {
     if (req.body.password) {
-      let hashedPassword = bcryptjs.hashSync(req.body.password, 10);
+      req.body.password = bcryptjs.hashSync(req.body.password, 10);
     }
 
     const updatedUser = await User.findByIdAndUpdate(
@@ -24,7 +24,7 @@ export const updateUser = async (req, res, next) => {
       {
         $set: {
           username: req.body.username,
-          password: hashedPassword,
+          password: req.body.password,
         },
       },
       { new: true }
@@ -38,7 +38,6 @@ export const updateUser = async (req, res, next) => {
 
 
 // delete user
-
 
 export const deleteUser = async (req, res, next) => {
   if (req.user.id !== req.params.id) {
