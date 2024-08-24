@@ -29,12 +29,12 @@ export default function Rencontrer() {
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          // console.log('SUCCESS!');
           e.target.reset();
           setStatusMessage('success');
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          console.log(error.text);
           e.target.reset();
           setStatusMessage('failed');
         },

@@ -7,7 +7,7 @@ function Footer() {
       <div>
         <h2>Nous contacter</h2> <br />
         <ul>
-          <li><a href="mailto:silvin@mail.fr">silvin@mail.fr</a></li>
+          <li><a href="mailto:silvin@mail.fr">silvin.mastercmw@gmail.com</a></li>
           <li><a href="/rencontrer">Nous contacter</a></li>
           <li><a href="/rencontrer">Prendre rendez vous</a></li>
         </ul>
