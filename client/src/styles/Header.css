@@ -218,11 +218,16 @@ a{
     .mobile-slide-menu-box {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        height: 100%;
+        height: 100vh;
         z-index: 101;
         background-color: #F1F1F1;
+        padding-top: 70px;
+    }
+
+    .mobile-slide-menu-box a {
+        height: 15%;
     }
 
     .mobile-slide-menu-box a:hover{
