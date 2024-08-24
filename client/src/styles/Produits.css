@@ -192,10 +192,29 @@ p{
 @media (max-width: 1000px) {
     .wine {
         height: initial !important;   
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+
+    .wine .information {
+        width: 80%;
     }
 
     .display {
+        width: 100%;
         height: initial !important;
+
+    }
+
+    .display img {
+        position: unset !important;
+        max-height: 500px;
+    }
+
+    .display .circle {
+        display: none;
     }
 
     .tags {

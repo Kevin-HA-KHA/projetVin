@@ -71,6 +71,10 @@
         width: 50%;
     }
 
+    .level-1 {
+        text-align: center;
+    }
+
     .level a {
         margin: 0;
     }

@@ -62,3 +62,16 @@
     text-decoration: underline;
     bottom: 10%;
 }
+
+@media (max-width: 1000px) {
+
+    .singup {
+        width: 100%;
+    }
+
+    .singup h1 {
+        text-align: center;
+    }
+
+
+}

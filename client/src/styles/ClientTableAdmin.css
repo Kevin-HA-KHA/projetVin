@@ -114,3 +114,10 @@
 .delete-button:hover {
     background-color: darkred;
 }
+
+@media (max-width: 1000px) {
+    .client-table-container {
+        min-height: 100vh;
+    }
+
+}

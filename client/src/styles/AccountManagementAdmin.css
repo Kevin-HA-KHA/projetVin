@@ -94,3 +94,14 @@
 .delete-button:hover {
     background-color: #c82333;
 }
+
+@media (max-width: 1000px) {
+    .account-management {
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+}

@@ -64,3 +64,19 @@
     text-decoration: underline;
     bottom: 10%;
 }
+
+@media (max-width: 1000px) {
+    .singin-block {
+        width: 100%;
+    }
+
+    .container {
+        width: 100% !important;
+    }
+
+    .singin {
+        width: 100%;
+    }
+
+
+}
