@@ -94,20 +94,20 @@ export default function Rencontrer() {
                   </div>
                   <div className='row3'>
                       <select id="jobs" name="jobs">
-                        <option value="" selected disabled hidden>Professions</option>
-                        <option value="Particulier">Particulier</option>
+                        <option value="" selected disabled hidden>Profession</option>
                         <option value="Grossiste">Grossiste</option>
                         <option value="Agriculteur">Agriculteur</option>
                         <option value="Viticulteur">Viticulteur</option>
                         <option value="Oenologue">Oenologue</option>
                         <option value="Revendeur">Revendeur</option>
+                        <option value="Autre">Autre</option>
                       </select>
                   </div>
                   <div className='row4'>
                       <label htmlFor="coordonnee">Email</label> <br />
                       <span>
                           <input type="email" id="email" name="email" placeholder='Email' required />
-                          <input type="tel" id="number" name="number" placeholder='Numéro de téléphone' required />
+                          <input type="tel" id="number" name="number" placeholder='Téléphone (facultatf)' />
                       </span>
                   </div>
                   <div className='row5'>    
