@@ -81,9 +81,9 @@ export default function Rencontrer() {
                 <form ref={form} onSubmit={sendEmail}> 
                   <div className='row1'>
                       <button type="button" onClick={() => handleStatusChange('particulier')} style={{border: status === "particulier" ? 'solid 2px #444' : 'solid 1px black'}}>Je suis un particulier</button>
-                      <input type="radio" id="particulier" name="status" hidden checked={status === 'particulier'} readOnly />
+                      <input type="radio" id="particulier" name="status" value="Particulier" hidden checked={status === 'particulier'} readOnly />
                       <button type="button" onClick={() => handleStatusChange('professionnel')} style={{border: status === "professionnel" ? 'solid 2px #444' : 'solid 1px black'}}>Je suis un professionnel</button>
-                      <input type="radio" id="professionnel" name="status" hidden checked={status === 'professionnel'} readOnly />
+                      <input type="radio" id="professionnel" name="status" value="Professionel" hidden checked={status === 'professionnel'} readOnly />
                   </div>
                   <div className='row2'>
                       <label htmlFor="informations">Mes informations</label> <br />
