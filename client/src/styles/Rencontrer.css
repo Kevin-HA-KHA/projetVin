@@ -134,7 +134,7 @@ span {
     width: 100%;
     height: 130px;
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
 }
 
 form .send {
@@ -149,6 +149,21 @@ form .send {
 
 .rdv {
     background-color: #fff;
+}
+
+/* EMAIL SEND MESSAGE */
+.statusMessage {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding: 50px 0 20px 0;
+    color: black;
+    text-decoration: underline;
+    background-color: #fff;
+    text-align: center;
 }
 
 

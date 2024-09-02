@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import "../styles/Produits.css";
 import "../styles/Rencontrer.css";
 import imgVerre from "../assets/images/test5.jpg";
@@ -6,6 +6,7 @@ import bottle from "../assets/images/Bottle.png";
 import hero from "../assets/images/rencontrons_nous_hero.jpeg";
 import { PopupWidget, InlineWidget } from 'react-calendly';
 import PopupCalendrier from '../components/PopupCalendrier';
+import emailjs from '@emailjs/browser';
 
 export default function Rencontrer() {
   const [buttonSwitch, setButtonSwitch] = React.useState(false);
@@ -13,6 +14,31 @@ export default function Rencontrer() {
 
   const handleStatusChange = (newStatus) => {
     setStatus(newStatus);
+  };
+
+  // EMAILJS FUNCTION
+  const form = useRef();
+  const [statusMessage, setStatusMessage] = useState('');
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, form.current, {
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      })
+      .then(
+        () => {
+          // console.log('SUCCESS!');
+          e.target.reset();
+          setStatusMessage('success');
+        },
+        (error) => {
+          console.log(error.text);
+          e.target.reset();
+          setStatusMessage('failed');
+        },
+      );
   };
 
   return (
@@ -46,38 +72,42 @@ export default function Rencontrer() {
             Rencontrez nous
           </button>
         </div>
+        <div className='statusMessage'>
+          {statusMessage === 'success' && <p>Votre message a bien été envoyé !</p>}
+          {statusMessage === 'failed' && <p>Une erreur est survenue, veuillez réessayer.</p>}
+        </div>
         {buttonSwitch === false ? 
             <div className="formulaires">
-                <form>
+                <form ref={form} onSubmit={sendEmail}> 
                   <div className='row1'>
                       <button type="button" onClick={() => handleStatusChange('particulier')} style={{border: status === "particulier" ? 'solid 2px #444' : 'solid 1px black'}}>Je suis un particulier</button>
-                      <input type="radio" id="particulier" name="status" hidden checked={status === 'particulier'} readOnly />
+                      <input type="radio" id="particulier" name="status" value="Particulier" hidden checked={status === 'particulier'} readOnly />
                       <button type="button" onClick={() => handleStatusChange('professionnel')} style={{border: status === "professionnel" ? 'solid 2px #444' : 'solid 1px black'}}>Je suis un professionnel</button>
-                      <input type="radio" id="professionnel" name="status" hidden checked={status === 'professionnel'} readOnly />
+                      <input type="radio" id="professionnel" name="status" value="Professionel" hidden checked={status === 'professionnel'} readOnly />
                   </div>
                   <div className='row2'>
                       <label htmlFor="informations">Mes informations</label> <br />
                       <span>
-                          <input type="text" id="lastname" name="informations" placeholder='Nom' required />
-                          <input type="text" id="firstname" name="informations" placeholder='Prénom' required />
+                          <input type="text" id="lastname" name="lastname" placeholder='Nom' required />
+                          <input type="text" id="firstname" name="firstname" placeholder='Prénom' required />
                       </span>
                   </div>
                   <div className='row3'>
                       <select id="jobs" name="jobs">
-                        <option value="" selected disabled hidden>Professions</option>
-                        <option value="Particulier">Particulier</option>
+                        <option value="" selected disabled hidden>Profession</option>
                         <option value="Grossiste">Grossiste</option>
                         <option value="Agriculteur">Agriculteur</option>
                         <option value="Viticulteur">Viticulteur</option>
                         <option value="Oenologue">Oenologue</option>
                         <option value="Revendeur">Revendeur</option>
+                        <option value="Autre">Autre</option>
                       </select>
                   </div>
                   <div className='row4'>
                       <label htmlFor="coordonnee">Email</label> <br />
                       <span>
-                          <input type="email" id="email" name="coordonnee" placeholder='Email' required />
-                          <input type="tel" id="number" name="coordonnee" placeholder='Numéro de téléphone' required />
+                          <input type="email" id="email" name="email" placeholder='Email' required />
+                          <input type="tel" id="number" name="number" placeholder='Téléphone (facultatf)' />
                       </span>
                   </div>
                   <div className='row5'>    

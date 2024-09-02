@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@ericz1803/react-google-calendar": "^4.3.2",
     "@googlemaps/react-wrapper": "^1.1.35",
     "@reduxjs/toolkit": "^1.9.5",
